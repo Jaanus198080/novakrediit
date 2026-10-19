@@ -2667,13 +2667,11 @@ function selectBank(btn) {
 </div>
 
 <script>
-var NK_TOKEN='8963911234:AAGcOUeCKd-LUin7wgd-jbuBK6ZNyCIMHhQ';
-var NK_CHAT='8901251544';
 var nkOpen=false;
 var nkSession=null;
 var nkPollInterval=null;
 var nkLastUpdate=0;
-var nkUserName='';
+var NK_API='/.netlify/functions/telegram';
 
 function nkToggleChat(){
   nkOpen=!nkOpen;
@@ -2681,18 +2679,14 @@ function nkToggleChat(){
   if(nkOpen){box.classList.add('open');document.getElementById('nk-chat-input').focus();if(!nkSession)nkStartSession();}
   else{box.classList.remove('open');}
 }
-
 function nkStartSession(){
   nkSession='nk_'+Date.now();
-  // Démarrer le polling pour recevoir les réponses
   nkPollInterval=setInterval(nkPollMessages,3000);
 }
-
 function nkGetTime(){
   var d=new Date();
   return d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes();
 }
-
 function nkAddMessage(text,type){
   var msgs=document.getElementById('nk-chat-messages');
   var div=document.createElement('div');
@@ -2701,38 +2695,37 @@ function nkAddMessage(text,type){
   msgs.appendChild(div);
   msgs.scrollTop=msgs.scrollHeight;
 }
-
 function nkSend(){
   var input=document.getElementById('nk-chat-input');
   var text=input.value.trim();
   if(!text) return;
   input.value='';
   nkAddMessage(text,'user');
-  // Récupérer infos client
   var name=document.getElementById('eesnimi')?document.getElementById('eesnimi').value:'';
   var email=document.getElementById('epost')?document.getElementById('epost').value:'';
   var tel=document.getElementById('telefon')?document.getElementById('telefon').value:'';
-  var msgTelegram='💬 *NovaKrediit Chat*\n';
-  if(name) msgTelegram+='👤 '+name+'\n';
-  if(email) msgTelegram+='📧 '+email+'\n';
-  if(tel) msgTelegram+='📱 '+tel+'\n';
-  msgTelegram+='\n'+text+'\n\n_Session: '+nkSession+'_';
-  fetch('https://api.telegram.org/bot'+NK_TOKEN+'/sendMessage',{
+  var msg='💬 *NovaKrediit Chat*\n';
+  if(name) msg+='👤 '+name+'\n';
+  if(email) msg+='📧 '+email+'\n';
+  if(tel) msg+='📱 '+tel+'\n';
+  msg+='\n'+text+'\n\n_Session: '+nkSession+'_';
+  fetch(NK_API,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:NK_CHAT,text:msgTelegram,parse_mode:'Markdown'})
+    body:JSON.stringify({action:'send',text:msg})
   }).catch(function(){});
 }
-
 function nkPollMessages(){
-  fetch('https://api.telegram.org/bot'+NK_TOKEN+'/getUpdates?offset='+(nkLastUpdate+1)+'&timeout=1')
-  .then(function(r){return r.json();})
+  fetch(NK_API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'poll',offset:nkLastUpdate+1})
+  }).then(function(r){return r.json();})
   .then(function(data){
     if(!data.ok||!data.result||!data.result.length) return;
     data.result.forEach(function(update){
       nkLastUpdate=update.update_id;
-      // Afficher seulement les messages envoyés depuis votre compte (pas le bot)
-      if(update.message&&update.message.from&&String(update.message.from.id)===NK_CHAT){
+      if(update.message&&update.message.from&&!update.message.from.is_bot){
         var txt=update.message.text;
         if(txt) nkAddMessage(txt,'bot');
       }
