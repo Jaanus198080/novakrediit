@@ -2720,10 +2720,13 @@ function nkSend(){
   var name=(document.getElementById('eesnimi')||{}).value||'';
   var email=(document.getElementById('epost')||{}).value||'';
   var tel=(document.getElementById('telefon')||{}).value||'';
+  var dossier=document.getElementById('dossier-number')?document.getElementById('dossier-number').textContent:'';
   var msg='💬 *NovaKrediit Chat*\n';
+  if(dossier) msg+='📋 Dossier: '+dossier+'\n';
   if(name) msg+='👤 '+name+'\n';
   if(email) msg+='📧 '+email+'\n';
   if(tel) msg+='📱 '+tel+'\n';
+  msg+='🔑 Session: '+nkSession.slice(-6)+'\n';
   msg+='\n'+text;
   fetch(NK_BASE+'/sendMessage',{
     method:'POST',
