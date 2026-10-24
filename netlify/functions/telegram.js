@@ -1,6 +1,6 @@
 exports.handler = async function(event) {
-  const TOKEN = process.env.TELEGRAM_TOKEN || '8976789014:AAHW7O13E_k0v7rZKnlTvWxZqrmZphk8Zzk';
-  const CHAT_ID = process.env.TELEGRAM_CHAT_ID || '8901251544';
+  const TOKEN = process.env.TELEGRAM_TOKEN;
+  const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
   const headers = {
     'Access-Control-Allow-Origin': '*',
