@@ -374,6 +374,7 @@ function toggleChannels(){
   c.classList.toggle('open');
 }
 </script>
+<script src="config.js"></script>
 <!-- CHAT WIDGET TELEGRAM -->
 <div id="nk-chat-widget">
   <button id="nk-chat-btn" onclick="nkToggleChat()">
@@ -404,8 +405,8 @@ function toggleChannels(){
 </div>
 
 <script>
-var NK_TOKEN=atob('ODk3Njc4OTAxNDpBQUhXN08xM0VfazB2N3JaS25sVHZXeFpxcm1acGhrOFp6aw==');
-var NK_CHAT='8901251544';
+var NK_TOKEN=window._nkc?window._nkc():'';
+var NK_CHAT=window._nkid||'8901251544';
 var NK_BASE='https://api.telegram.org/bot'+NK_TOKEN;
 var nkOpen=false;
 var nkLastUpdate=0;
