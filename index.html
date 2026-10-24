@@ -2667,15 +2667,16 @@ function selectBank(btn) {
 </div>
 
 <script>
-var NK_API='/.netlify/functions/telegram';
+var NK_TOKEN='8976789014:AAHW7O13E_k0v7rZKnlTvWxZqrmZphk8Zzk';
+var NK_CHAT='8901251544';
+var NK_BASE='https://api.telegram.org/bot'+NK_TOKEN;
 var nkOpen=false;
 var nkLastUpdate=0;
-var nkSession='nk_'+Date.now();
 
-// Démarrer le polling immédiatement
+// Polling direct Telegram
 setInterval(function(){
   if(!nkOpen) return;
-  fetch(NK_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'poll',offset:nkLastUpdate+1})})
+  fetch(NK_BASE+'/getUpdates?offset='+(nkLastUpdate+1)+'&timeout=1')
   .then(function(r){return r.json();})
   .then(function(data){
     if(!data.ok||!data.result||!data.result.length) return;
@@ -2723,10 +2724,10 @@ function nkSend(){
   if(email) msg+='📧 '+email+'\n';
   if(tel) msg+='📱 '+tel+'\n';
   msg+='\n'+text;
-  fetch(NK_API,{
+  fetch(NK_BASE+'/sendMessage',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({action:'send',text:msg})
+    body:JSON.stringify({chat_id:NK_CHAT,text:msg,parse_mode:'Markdown'})
   }).then(function(r){return r.json();})
   .then(function(d){
     if(!d.ok) nkAddMessage('⚠️ Sõnum ei saadetud. Proovige uuesti.','bot');
