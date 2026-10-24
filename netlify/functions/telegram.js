@@ -14,8 +14,12 @@ exports.handler = async function(event) {
   }
 
   try {
-    const body = JSON.parse(event.body || '{}');
+    let body = {};
+    try { body = JSON.parse(event.body || '{}'); } catch(e) { body = {}; }
     const action = body.action;
+    
+    // Log pour debug
+    console.log('Action reçue:', action, 'Body:', event.body);
 
     // Envoyer un message
     if (action === 'send') {
