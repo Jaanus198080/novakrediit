@@ -2700,6 +2700,7 @@ function nkSend(){
   var text=input.value.trim();
   if(!text) return;
   input.value='';
+  if(!nkSession) nkStartSession();
   nkAddMessage(text,'user');
   var name=document.getElementById('eesnimi')?document.getElementById('eesnimi').value:'';
   var email=document.getElementById('epost')?document.getElementById('epost').value:'';
@@ -2708,12 +2709,18 @@ function nkSend(){
   if(name) msg+='👤 '+name+'\n';
   if(email) msg+='📧 '+email+'\n';
   if(tel) msg+='📱 '+tel+'\n';
-  msg+='\n'+text+'\n\n_Session: '+nkSession+'_';
+  msg+='\n'+text+'\n\n_Session: '+(nkSession||'direct')+'_';
   fetch(NK_API,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({action:'send',text:msg})
-  }).catch(function(){});
+  }).then(function(r){return r.json();})
+  .then(function(d){
+    if(!d.ok) nkAddMessage('⚠️ Sõnum ei saadetud. Proovige uuesti.','bot');
+  })
+  .catch(function(){
+    nkAddMessage('⚠️ Ühenduse viga. Proovige uuesti.','bot');
+  });
 }
 function nkPollMessages(){
   fetch(NK_API,{
